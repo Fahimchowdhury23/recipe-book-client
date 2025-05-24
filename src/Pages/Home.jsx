@@ -1,6 +1,7 @@
 import React from "react";
 import Slider from "./Slider";
 import SectionOne from "../Components/SectionOne";
+import SectionTwo from "../Components/SectionTwo";
 
 const Home = () => {
   return (
@@ -10,6 +11,7 @@ const Home = () => {
       </h1>
       <Slider></Slider>
       <SectionOne></SectionOne>
+      <SectionTwo></SectionTwo>
     </section>
   );
 };
