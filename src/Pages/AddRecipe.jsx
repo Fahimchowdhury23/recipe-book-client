@@ -18,7 +18,13 @@ const AddRecipe = ({ loading }) => {
     const formData = new FormData(form);
     const newRecipe = Object.fromEntries(formData.entries());
 
-    const fullInfo = { displayName, photoURL, email, ...newRecipe };
+    const fullInfo = {
+      displayName,
+      photoURL,
+      email,
+      ...newRecipe,
+      likeCount: 0,
+    };
 
     fetch("http://localhost:3000/recipes", {
       method: "POST",

@@ -24,7 +24,7 @@ const RecipeCard = ({ recipe }) => {
         </div>
       </div>
       <div className="pb-2">
-        <Link className="" to={`/recipeDetails/${recipe._id}`}>
+        <Link to={`/recipeDetails/${recipe._id}`}>
           <button className="btn w-full rounded-xl bg-primary">
             See Details
           </button>
