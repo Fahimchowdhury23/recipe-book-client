@@ -1,5 +1,6 @@
 import React from "react";
 import Slider from "./Slider";
+import SectionOne from "../Components/SectionOne";
 
 const Home = () => {
   return (
@@ -8,6 +9,7 @@ const Home = () => {
         Savor Every Bite - Elevated Everyday Recipes
       </h1>
       <Slider></Slider>
+      <SectionOne></SectionOne>
     </section>
   );
 };
