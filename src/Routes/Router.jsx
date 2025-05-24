@@ -7,6 +7,8 @@ import AddRecipe from "../Pages/AddRecipe";
 import Register from "../Pages/Register";
 import Login from "../Pages/LogIn";
 import AuthenticationLayout from "../Layout/AuthenticationLayout";
+import ErrorPage from "../Components/ErrorPage";
+import PrivateRoute from "../Provider/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -23,11 +25,19 @@ const router = createBrowserRouter([
       },
       {
         path: "addRecipe",
-        element: <AddRecipe></AddRecipe>,
+        element: (
+          <PrivateRoute>
+            <AddRecipe></AddRecipe>
+          </PrivateRoute>
+        ),
       },
       {
         path: "myRecipes",
-        element: <MyRecipes></MyRecipes>,
+        element: (
+          <PrivateRoute>
+            <MyRecipes></MyRecipes>
+          </PrivateRoute>
+        ),
       },
     ],
   },
@@ -45,6 +55,10 @@ const router = createBrowserRouter([
         element: <Register></Register>,
       },
     ],
+  },
+  {
+    path: "*",
+    Component: ErrorPage,
   },
 ]);
 

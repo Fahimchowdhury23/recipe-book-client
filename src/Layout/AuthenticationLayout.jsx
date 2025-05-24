@@ -6,7 +6,7 @@ import { Outlet } from "react-router";
 
 const AuthenticationLayout = () => {
   return (
-    <section>
+    <section className="bg-gradient-to-b min-h-screen from-[#F4EADF] to-primary">
       <header>
         <Navbar></Navbar>
       </header>

@@ -22,3 +22,8 @@ text-secondary transition-transform ease-out duration-150;
 .nav-link.active {
   @apply font-bold scale-105;
 }
+
+.swiper-button-prev,
+.swiper-button-next {
+  @apply text-4xl text-gray-700;
+}

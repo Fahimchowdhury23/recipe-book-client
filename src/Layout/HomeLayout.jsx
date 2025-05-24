@@ -1,18 +1,20 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
-import { Outlet } from "react-router";
+import { Outlet, useNavigation } from "react-router";
 import Footer from "../Components/Footer";
 import ScrollToTop from "../Components/ScrollToTop";
+import Loader from "../Components/Loader";
 
 const HomeLayout = () => {
+  const { state } = useNavigation();
   return (
-    <section>
+    <section className="bg-gradient-to-b min-h-screen from-[#F4EADF] to-primary">
       <header>
         <Navbar></Navbar>
       </header>
       <main>
         <ScrollToTop></ScrollToTop>
-        <Outlet></Outlet>
+        {state === "loading" ? <Loader></Loader> : <Outlet></Outlet>}
       </main>
       <footer>
         <Footer></Footer>
