@@ -47,7 +47,7 @@ const Navbar = () => {
         <NavLink className="nav-link" to="/addRecipe">
           Add Recipe
         </NavLink>
-        <NavLink to={`/myRecipes/${user.email}`} className="nav-link">
+        <NavLink to={`/myRecipes/${user?.email}`} className="nav-link">
           My Recipes
         </NavLink>
       </div>
