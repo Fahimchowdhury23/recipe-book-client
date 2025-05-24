@@ -107,7 +107,7 @@ const Register = () => {
   };
 
   return (
-    <section className="py-12">
+    <section className="py-8">
       <title>Register Page</title>
       <h2 className="text-center text-3xl font-bold text-secondary drop-shadow mb-8">
         Let's Get started!
