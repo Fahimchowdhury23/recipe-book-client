@@ -62,7 +62,7 @@ const AuthProvider = ({ children }) => {
     googleSignIn,
     signOutUser,
   };
-
+  console.log(user);
   return <AuthContext value={userInfo}>{children}</AuthContext>;
 };
 
