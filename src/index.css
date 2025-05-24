@@ -6,3 +6,19 @@
 
 @import "tailwindcss";
 @plugin "daisyui";
+
+@plugin "daisyui/theme" {
+  name: "light";
+  default: true;
+
+  --color-primary: #d8afa9;
+  --color-secondary: #5b4141;
+}
+
+.nav-link {
+  @apply relative rounded px-2 lg:px-3 py-1 lg:text-xl backdrop-blur-md 
+text-secondary transition-transform ease-out duration-150;
+}
+.nav-link.active {
+  @apply font-bold scale-105;
+}
