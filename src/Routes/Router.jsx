@@ -9,6 +9,7 @@ import Login from "../Pages/LogIn";
 import AuthenticationLayout from "../Layout/AuthenticationLayout";
 import ErrorPage from "../Components/ErrorPage";
 import PrivateRoute from "../Provider/PrivateRoute";
+import RecipeDetails from "../Pages/RecipeDetails";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       },
       {
         path: "allRecipes",
+        loader: () => fetch("http://localhost:3000/recipes"),
         element: <AllRecipes></AllRecipes>,
       },
       {
@@ -36,6 +38,16 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoute>
             <MyRecipes></MyRecipes>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/recipeDetails/:id",
+        loader: ({ params }) =>
+          fetch(`http://localhost:3000/recipes/${params.id}`),
+        element: (
+          <PrivateRoute>
+            <RecipeDetails></RecipeDetails>
           </PrivateRoute>
         ),
       },
