@@ -14,7 +14,7 @@ const SectionTwo = () => {
           <p className="text-lg text-gray-700 mb-6 max-w-xl">
             Unleash your inner chef with our handpicked recipes, stunning
             step-by-step instructions, and a global food-loving community.
-            Whether you're cooking for one or hosting a feast, we’ve got the
+            Whether you're cooking for one or hosting a feast, we've got the
             recipe that fits.
           </p>
 

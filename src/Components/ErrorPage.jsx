@@ -28,6 +28,7 @@ const ErrorPage = () => {
             className="cursor-pointer px-3 py-2 font-medium text-lg rounded-xl bg-primary"
             onClick={() => {
               navigate("/");
+              toast.dismiss();
               toast.success(
                 "Welcome back again, don't roam around carelessly. 🏡"
               );
@@ -38,6 +39,7 @@ const ErrorPage = () => {
           <button
             className="cursor-pointer px-3 py-2 ml-8 font-medium text-lg rounded-xl bg-primary"
             onClick={() => {
+              toast.dismiss();
               toast.success("Let's pick up right where you left off! ⏳", {
                 duration: 3000,
               });

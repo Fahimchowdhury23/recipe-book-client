@@ -61,6 +61,7 @@ const Login = () => {
 
     signInUser(email, password)
       .then((result) => {
+        toast.dismiss();
         toast.success(`Welcome back, ${result?.user?.displayName}!`, {
           duration: 3000,
           className: "text-center",
@@ -69,6 +70,7 @@ const Login = () => {
         navigate(state || "/");
       })
       .catch((error) => {
+        toast.dismiss();
         toast.error("Invalid username or password", error?.message);
         setLoading(false);
       });
@@ -81,6 +83,7 @@ const Login = () => {
 
     googleSignIn()
       .then((result) => {
+        toast.dismiss();
         toast.success(
           `Welcome, ${result?.user?.displayName}! You're logged in.`,
           {
@@ -93,6 +96,7 @@ const Login = () => {
       })
       .catch((error) => {
         setGoogleLoading(false);
+        toast.dismiss();
         toast.error("Something went wrong", error?.message);
       })
       .finally(() => setGoogleLoading(false));
@@ -100,7 +104,7 @@ const Login = () => {
 
   return (
     <section className="py-12">
-      <title>Login Page</title>
+      <title>Login Page | Recipe Book</title>
       <div className="grid grid-cols-1 max-w-xl lg:max-w-full mx-auto lg:mx-0 gap-6 lg:gap-0 lg:grid-cols-2">
         <div className="flex flex-col w-full rounded-xl lg:rounded-r-none items-center justify-center bg-[#EDC9AF]">
           <h2 className="text-center pt-6 lg:pt-0 text-4xl font-bold text-[#7B3F00] drop-shadow mb-8">

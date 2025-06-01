@@ -58,6 +58,7 @@ const Register = () => {
       .then((result) => {
         updateUser(profile)
           .then(() => {
+            toast.dismiss();
             toast.success(
               `Woohoo! ${result?.user?.displayName}, you're officially in. Let's have some fun!.`,
               {
@@ -69,10 +70,12 @@ const Register = () => {
             navigate("/");
           })
           .catch((error) => {
+            toast.dismiss();
             toast.error("Current User is not updating", error?.message);
           });
       })
       .catch((error) => {
+        toast.dismiss();
         if (error.code === "auth/email-already-in-use") {
           toast.error("That email is already taken. Try logging in?");
         } else if (error.code === "auth/weak-password") {
@@ -89,6 +92,7 @@ const Register = () => {
     setGoogleLoading(true);
     googleSignIn()
       .then((result) => {
+        toast.dismiss();
         toast.success(
           `Hey there, ${result?.user?.displayName} You just made a great choice joining us! Let's rock!.`,
           {
@@ -101,6 +105,7 @@ const Register = () => {
       })
       .catch((error) => {
         setGoogleLoading(false);
+        toast.dismiss();
         toast.error("Something went wrong", error?.message);
       })
       .finally(() => setGoogleLoading(false));
@@ -108,7 +113,7 @@ const Register = () => {
 
   return (
     <section className="py-8">
-      <title>Register Page</title>
+      <title>Register Page | Recipe Book</title>
       <h2 className="text-center text-3xl font-bold text-secondary drop-shadow mb-8">
         Let's Get started!
       </h2>
@@ -223,7 +228,7 @@ const Register = () => {
 
         <Link
           to="/auth/login"
-          className="font-semibold mt-6 flex justify-center text-[#7B3F00]"
+          className="font-semibold mt-6 flex justify-center hover:underline text-[#7B3F00]"
         >
           Already have an account?
         </Link>

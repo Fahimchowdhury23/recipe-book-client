@@ -8,7 +8,7 @@ import Loader from "../Components/Loader";
 const HomeLayout = () => {
   const { state } = useNavigation();
   return (
-    <section className="bg-gradient-to-b min-h-screen from-[#F4EADF] to-primary">
+    <section className="bg-gradient-to-b min-h-screen from-bg-base-100 to-primary">
       <header>
         <Navbar></Navbar>
       </header>

@@ -13,6 +13,7 @@
 
   --color-primary: #d8afa9;
   --color-secondary: #5b4141;
+  --color-base-100: #f4eadf;
 }
 
 .nav-link {
@@ -23,7 +24,8 @@ text-secondary transition-transform ease-out duration-150;
   @apply font-bold scale-105;
 }
 
-.swiper-button-prev,
-.swiper-button-next {
-  @apply text-4xl text-gray-700;
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #7b3f00;
+  font: bolder;
 }

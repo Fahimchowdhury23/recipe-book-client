@@ -10,6 +10,7 @@ import AuthenticationLayout from "../Layout/AuthenticationLayout";
 import ErrorPage from "../Components/ErrorPage";
 import PrivateRoute from "../Provider/PrivateRoute";
 import RecipeDetails from "../Pages/RecipeDetails";
+import Loader from "../Components/Loader";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,7 @@ const router = createBrowserRouter([
         loader: () =>
           fetch("https://recipe-book-server-alpha.vercel.app/recipes"),
         element: <AllRecipes></AllRecipes>,
+        hydrateFallbackElement: <Loader></Loader>,
       },
       {
         path: "addRecipe",
@@ -35,11 +37,7 @@ const router = createBrowserRouter([
         ),
       },
       {
-        path: "myRecipes/:email",
-        loader: ({ params }) =>
-          fetch(
-            `https://recipe-book-server-alpha.vercel.app/recipes/${params.email}`
-          ),
+        path: "/myRecipes/:email",
         element: (
           <PrivateRoute>
             <MyRecipes></MyRecipes>
@@ -57,6 +55,7 @@ const router = createBrowserRouter([
             <RecipeDetails></RecipeDetails>
           </PrivateRoute>
         ),
+        hydrateFallbackElement: <Loader></Loader>,
       },
     ],
   },
