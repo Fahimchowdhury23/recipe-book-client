@@ -2,9 +2,9 @@ import React, { use } from "react";
 import TopRecipeCard from "./TopRecipeCard";
 import { Link } from "react-router";
 
-const recipePromise = fetch("http://localhost:3000/recipes/top").then((res) =>
-  res.json()
-);
+const recipePromise = fetch(
+  "https://recipe-book-server-alpha.vercel.app/recipes/top"
+).then((res) => res.json());
 
 const TopRecipes = () => {
   const topRecipeData = use(recipePromise);

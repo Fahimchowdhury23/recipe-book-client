@@ -24,7 +24,7 @@ const RecipeDetails = () => {
   const [likes, setLikes] = useState(likeCount);
 
   const handleLike = (id) => {
-    fetch(`http://localhost:3000/recipes/${id}`, {
+    fetch(`https://recipe-book-server-alpha.vercel.app/recipes/${id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())

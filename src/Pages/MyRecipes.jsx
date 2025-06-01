@@ -28,7 +28,9 @@ const MyRecipes = () => {
 
   useEffect(() => {
     if (user?.email) {
-      fetch(`http://localhost:3000/recipes/user/${user?.email}`)
+      fetch(
+        `https://recipe-book-server-alpha.vercel.app/recipes/user/${user?.email}`
+      )
         .then((res) => res.json())
         .then((data) => {
           setMyData(data);
@@ -57,13 +59,16 @@ const MyRecipes = () => {
     const formData = new FormData(form);
     const updatedRecipe = Object.fromEntries(formData.entries());
 
-    fetch(`http://localhost:3000/recipes/${selectedRecipe._id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedRecipe),
-    })
+    fetch(
+      `https://recipe-book-server-alpha.vercel.app/recipes/${selectedRecipe._id}`,
+      {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(updatedRecipe),
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         document.getElementById("my_modal_5").close();
@@ -85,7 +90,7 @@ const MyRecipes = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`http://localhost:3000/recipes/user/${id}`, {
+    fetch(`https://recipe-book-server-alpha.vercel.app/recipes/user/${id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
