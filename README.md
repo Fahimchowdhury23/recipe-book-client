@@ -4,7 +4,7 @@ A user-friendly and interactive recipe collection platform tailored for food lov
 
 ## 🔗 Live Demo
 
-🌐 [Live Site](link) _Hold Ctrl (or Command on Mac) and click the link to open it in a new tab._
+🌐 [Live Site](https://recipe-book-23.web.app) _Hold Ctrl (or Command on Mac) and click the link to open it in a new tab._
 
 ---
 
@@ -82,35 +82,3 @@ Our application includes dedicated routes to handle errors gracefully:
 
 Contributions are welcome!  
 If you’d like to suggest new features, improve the UI, or fix bugs, feel free to fork the repo and open a pull request. Let's build something delicious together!
-
----
-
-## 📸 Screenshots
-
-### 🏠 Homepage
-
-![Homepage](link)
-
-### 📂 All Recipes 🍳📖
-
-![All Recipes](link)
-
-### ➕📄 Add Recipe 🥄
-
-![Add Recipes](link)
-
-### 👤📋 My Recipe 🍲
-
-![My Recipe](link)
-
-### 📜🔍 Recipe Details 🍽️
-
-![Recipe Details](link)
-
-### 🔐 Login Page
-
-![Login](link)
-
-### 📝 Register Page
-
-![Register](link)
