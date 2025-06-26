@@ -163,7 +163,7 @@ const AddRecipe = () => {
 
         <button
           type="submit"
-          className="w-full btn py-3 rounded-2xl border-none text-lg bg-primary text-secondary font-medium transition backdrop-blur-xl"
+          className="w-full btn py-3 rounded-2xl border-1 border-accent text-lg bg-primary text-secondary font-medium transition backdrop-blur-xl"
         >
           {loading ? (
             <span className="loading loading-spinner text-secondary"></span>

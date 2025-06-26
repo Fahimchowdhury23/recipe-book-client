@@ -10,7 +10,7 @@ const AuthenticationLayout = () => {
       <header>
         <Navbar></Navbar>
       </header>
-      <main className="w-11/12 mx-auto">
+      <main className="w-11/12 mx-auto pt-20">
         <ScrollToTop></ScrollToTop>
         <Outlet></Outlet>
       </main>

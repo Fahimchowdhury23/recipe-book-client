@@ -2,6 +2,7 @@ import React, { use, useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import AuthContext from "../Contexts/AuthContext";
 import toast from "react-hot-toast";
+import Swal from "sweetalert2";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -22,32 +23,46 @@ const Navbar = () => {
   };
 
   const handleSignOut = () => {
-    signOutUser()
-      .then(() => {
-        toast.dismiss();
-        toast.success("You've logged out successfully!", {
-          className: "text-center",
-        });
-        navigate("/auth/login");
-      })
-      .catch((error) => {
-        toast.dismiss();
-        toast.error("Something went wrong", error?.message);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You will be logged out.",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#5B4141",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, logout",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Signing Out
+
+        signOutUser()
+          .then(() => {
+            toast.dismiss();
+            toast.success("You've logged out successfully!", {
+              className: "text-center",
+            });
+            navigate("/auth/login");
+          })
+          .catch((error) => {
+            toast.dismiss();
+            toast.error("Something went wrong", error?.message);
+          });
+      }
+    });
   };
 
   return (
-    <div className="navbar p-3 flex justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
+    <div className="navbar fixed top-0 z-50 bg-base-100 p-3 flex justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
       <div className="flex items-center gap-1">
         <Link to="/">
           <img
-            className="w-10 lg:w-14 h-10 lg:h-14 cursor-pointer"
+            className="w-10 lg:w-12 h-10 lg:h-12 cursor-pointer"
             src="https://i.ibb.co/sdgpf1pV/illustration-cooking-logo-solid-background-852896-5161-removebg-preview.png"
             alt=""
           />
         </Link>
         <Link to="/">
-          <h1 className="text-xl lg:text-3xl font-bold cursor-pointer text-[#5B4141]">
+          <h1 className="text-xl lg:text-3xl font-bold cursor-pointer text-accent">
             Recipe Book
           </h1>
         </Link>
@@ -72,10 +87,10 @@ const Navbar = () => {
           </>
         )}
 
-        <NavLink className="nav-link" to="features">
+        <NavLink className="nav-link" to="/features">
           Features
         </NavLink>
-        <NavLink className="nav-link" to="contact">
+        <NavLink className="nav-link" to="/contact">
           Contact
         </NavLink>
       </div>
@@ -135,8 +150,11 @@ const Navbar = () => {
                 className="menu dropdown-content bg-primary text-lg rounded-box z-1 mt-3 w-52 p-2"
               >
                 <li>
-                  <a>{user?.displayName}</a>
+                  <a onClick={() => navigate(`/myRecipes/${user?.email}`)}>
+                    {user?.displayName}
+                  </a>
                 </li>
+
                 <li>
                   <a onClick={handleSignOut}>Logout</a>
                 </li>

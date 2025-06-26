@@ -79,9 +79,11 @@ const Features = () => {
     >
       <motion.h1
         className="text-4xl font-bold text-center mb-4 text-secondary"
-        variants={item}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        Features
+        Website Features
       </motion.h1>
 
       <motion.p

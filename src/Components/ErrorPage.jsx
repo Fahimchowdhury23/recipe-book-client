@@ -16,16 +16,16 @@ const ErrorPage = () => {
   return (
     <div className="bg-gradient-to-b min-h-screen from-primary to-white">
       <title>Page Not Found</title>
-      <div className="flex flex-col pt-20 my-auto justify-center items-center">
+      <div className="flex flex-col pt-16 my-auto justify-center items-center">
         <img
-          className="rounded-2xl h-130"
+          className="rounded-2xl h-80 lg:h-130"
           src="https://i.ibb.co/mVfqKvRy/error-404-removebg-preview.png"
           alt="404 Error!"
         />
 
-        <div className="flex mt-6 gap-5 text-secondary">
+        <div className="flex mt-4 lg:mt-6 lg:gap-5 text-secondary">
           <button
-            className="cursor-pointer px-3 py-2 font-medium text-lg rounded-xl bg-primary"
+            className="cursor-pointer px-2 lg:px-3 py-2 font-medium lg:text-lg rounded-xl bg-primary"
             onClick={() => {
               navigate("/");
               toast.dismiss();
@@ -37,13 +37,13 @@ const ErrorPage = () => {
             Back to home
           </button>
           <button
-            className="cursor-pointer px-3 py-2 ml-8 font-medium text-lg rounded-xl bg-primary"
+            className="cursor-pointer px-2 lg:px-3 py-2 ml-8 font-medium lg:text-lg rounded-xl bg-primary"
             onClick={() => {
               toast.dismiss();
               toast.success("Let's pick up right where you left off! ⏳", {
                 duration: 3000,
               });
-              setTimeout(() => navigate(-1), 2000);
+              setTimeout(() => navigate(-1), 1000);
             }}
           >
             Previous Page

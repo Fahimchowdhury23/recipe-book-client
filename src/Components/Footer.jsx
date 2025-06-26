@@ -14,13 +14,13 @@ const Footer = () => {
           />
         </Link>
         <Link to="/">
-          <h1 className="text-3xl font-bold cursor-pointer text-[#5B4141]">
+          <h1 className="text-3xl font-bold cursor-pointer text-accent">
             Recipe Book
           </h1>
         </Link>
       </div>
 
-      <nav className="grid grid-flow-col text-lg text-[#5B4141] font-medium">
+      <nav className="grid grid-flow-col text-lg text-accent font-medium">
         <NavLink className="nav-link" to="/">
           Home
         </NavLink>
@@ -28,10 +28,10 @@ const Footer = () => {
           All Recipes
         </NavLink>
 
-        <NavLink className="nav-link" to="aboutUs">
-          About Us
+        <NavLink className="nav-link" to="/features">
+          Features
         </NavLink>
-        <NavLink className="nav-link" to="contact">
+        <NavLink className="nav-link" to="/contact">
           Contact
         </NavLink>
       </nav>

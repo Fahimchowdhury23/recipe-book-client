@@ -12,7 +12,7 @@ const HomeLayout = () => {
       <header>
         <Navbar></Navbar>
       </header>
-      <main>
+      <main className="pt-20">
         <ScrollToTop></ScrollToTop>
         {state === "loading" ? <Loader></Loader> : <Outlet></Outlet>}
       </main>

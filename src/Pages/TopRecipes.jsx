@@ -11,7 +11,7 @@ const TopRecipes = () => {
 
   return (
     <section>
-      <h2 className="text-center pt-8 lg:pt-12 text-3xl font-bold text-secondary drop-shadow mb-2">
+      <h2 className="text-center pt-6 lg:pt-10 text-3xl font-bold text-secondary drop-shadow mb-2">
         Top Recipes
       </h2>
       <p className="border-b-3 w-1/3 mx-auto border-accent/70 mb-6"></p>
