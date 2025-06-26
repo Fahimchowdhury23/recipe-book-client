@@ -23,13 +23,13 @@ const AllRecipes = () => {
   return (
     <section>
       <title>All Recipes | Recipe Book</title>
-      <h2 className="text-center pt-8 text-3xl font-bold text-secondary drop-shadow mb-2">
+      <h2 className="text-center pt-6 text-2xl lg:text-3xl font-bold text-secondary drop-shadow mb-2">
         All Recipes
       </h2>
-      <p className="border-b-3 w-1/3 mx-auto border-[#7B3F00]/70 mb-6"></p>
+      <p className="border-b-3 w-1/4 mx-auto border-accent/70 mb-6"></p>
 
-      <div className="w-10/12 mx-auto">
-        <p className="text-xl font-semibold text-[#7B3F00] mb-2">
+      <div className="w-11/12 lg:w-10/12 mx-auto">
+        <p className="text-lg lg:text-xl font-semibold text-accent mb-2">
           Cuisine Type :
         </p>
 
@@ -37,7 +37,7 @@ const AllRecipes = () => {
           name="cuisineType"
           value={selectedCuisine}
           onChange={(e) => setSelectedCuisine(e.target.value)}
-          className="p-3 cursor-pointer rounded-xl bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+          className="p-2 lg:p-3 cursor-pointer rounded-xl bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
         >
           {cuisines.map((type) => (
             <option
@@ -51,7 +51,7 @@ const AllRecipes = () => {
         </select>
       </div>
 
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 pt-4 pb-10 w-10/12 mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pt-4 pb-10 w-11/12 xl:w-10/12 mx-auto">
         {filteredRecipes.map((recipe) => (
           <RecipeCard key={recipe._id} recipe={recipe}></RecipeCard>
         ))}

@@ -3,9 +3,10 @@ import { Link } from "react-router";
 
 const SectionTwo = () => {
   return (
-    <section className="bg-gradient-to-br from-yellow-100 to-white py-16 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12">
+    <section className="bg-gradient-to-br from-yellow-100 to-white py-10 lg:py-16">
+      <div className="w-11/12 lg:w-10/12 mx-auto flex flex-col xl:flex-row items-center gap-12">
         {/* Left Side Text Content */}
+
         <div className="flex-1">
           <h2 className="text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
             Bring Cooking to Life <br />
@@ -19,7 +20,7 @@ const SectionTwo = () => {
           </p>
 
           {/* Feature Highlights */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="flex items-start gap-3">
               <span className="text-yellow-500 text-2xl">📸</span>
               <div>
@@ -31,6 +32,7 @@ const SectionTwo = () => {
                 </p>
               </div>
             </div>
+
             <div className="flex items-start gap-3">
               <span className="text-yellow-500 text-2xl">⏱️</span>
               <div>
@@ -60,12 +62,13 @@ const SectionTwo = () => {
             </div>
           </div>
 
-          {/* Call to Action */}
-          <Link to="/allRecipes">
-            <button className="mt-4 px-6 py-3 btn bg-yellow-500 text-white rounded-xl font-semibold cursor-pointer">
-              Explore Recipes
-            </button>
-          </Link>
+          <div className="text-center lg:text-left">
+            <Link to="/allRecipes">
+              <button className="mt-4 px-6 py-3 btn bg-yellow-500 hover:bg-yellow-600 text-white rounded-xl font-semibold cursor-pointer">
+                Explore Recipes
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Right Side Image */}

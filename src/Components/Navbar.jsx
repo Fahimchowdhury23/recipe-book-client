@@ -37,40 +37,52 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar p-3 flex justify-around border-1 border-[#d8afa9] shadow-sm">
+    <div className="navbar p-3 flex justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
       <div className="flex items-center gap-1">
         <Link to="/">
           <img
-            className="w-14 h-14 cursor-pointer"
+            className="w-10 lg:w-14 h-10 lg:h-14 cursor-pointer"
             src="https://i.ibb.co/sdgpf1pV/illustration-cooking-logo-solid-background-852896-5161-removebg-preview.png"
             alt=""
           />
         </Link>
         <Link to="/">
-          <h1 className="text-3xl font-bold cursor-pointer text-[#5B4141]">
+          <h1 className="text-xl lg:text-3xl font-bold cursor-pointer text-[#5B4141]">
             Recipe Book
           </h1>
         </Link>
       </div>
 
-      <div className="flex text-xl font-medium items-center text-[#4A3F3F] gap-3">
+      <div className="flex lg:text-xl whitespace-nowrap font-medium items-center text-[#4A3F3F]  lg:gap-2">
         <NavLink className="nav-link" to="/">
           Home
         </NavLink>
         <NavLink className="nav-link" to="/allRecipes">
           All Recipes
         </NavLink>
-        <NavLink className="nav-link" to="/addRecipe">
-          Add Recipe
+
+        {user && (
+          <>
+            <NavLink className="nav-link" to="/addRecipe">
+              Add Recipe
+            </NavLink>
+            <NavLink to={`/myRecipes/${user?.email}`} className="nav-link">
+              My Recipes
+            </NavLink>
+          </>
+        )}
+
+        <NavLink className="nav-link" to="features">
+          Features
         </NavLink>
-        <NavLink to={`/myRecipes/${user?.email}`} className="nav-link">
-          My Recipes
+        <NavLink className="nav-link" to="contact">
+          Contact
         </NavLink>
       </div>
 
       {/* Toggle theme */}
 
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 lg:gap-2">
         <button
           className="cursor-pointer hover:bg-primary/60 rounded-full p-1"
           onClick={toggleTheme}
@@ -80,7 +92,7 @@ const Navbar = () => {
               {/* sun icon */}
 
               <svg
-                className="swap-on text-[#7B3F00] h-10 w-10 fill-current transition-transform duration-500 transform rotate-180"
+                className="swap-on text-accent h-10 w-10 fill-current transition-transform duration-500 transform rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -92,7 +104,7 @@ const Navbar = () => {
               {/* moon icon */}
 
               <svg
-                className="swap-off text-[#7B3F00] h-10 w-10 fill-current transition-all duration-500 transform"
+                className="swap-off text-accent h-10 w-10 fill-current transition-all duration-500 transform"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -134,12 +146,12 @@ const Navbar = () => {
         ) : (
           <div className="flex items-center gap-2">
             <Link to="/auth/login">
-              <button className="text-[#7B3F00] lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
+              <button className="text-accent lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
                 Login
               </button>
             </Link>
             <Link to="/auth/register">
-              <button className="text-[#7B3F00] lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
+              <button className="text-accent lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
                 Register
               </button>
             </Link>

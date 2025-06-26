@@ -128,7 +128,7 @@ const MyRecipes = () => {
       <h2 className="text-center pt-8 text-3xl font-bold text-secondary drop-shadow mb-2">
         My Recipes
       </h2>
-      <p className="border-b-3 w-1/3 mx-auto border-[#7B3F00]/70 mb-6"></p>
+      <p className="border-b-3 w-1/3 mx-auto border-accent/70 mb-6"></p>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-11/12 mx-auto p-6">
         {/* user added recipe */}
@@ -150,12 +150,12 @@ const MyRecipes = () => {
               id="my_modal_5"
               className="modal modal-bottom sm:modal-middle"
             >
-              <div className="modal-box border-2 border-[#7B3F00]/70 rounded-2xl">
+              <div className="modal-box border-2 border-accent/70 rounded-2xl">
                 <p
                   onClick={closeModal}
-                  className="flex justify-end cursor-pointer text-[#7B3F00]/70 relative"
+                  className="flex justify-end cursor-pointer text-accent/70 relative"
                 >
-                  <span className="hover:bg-[#7B3F00]/20 left-[423.2px] w-6 -top-[2.6px] rounded-full absolute">
+                  <span className="hover:bg-accent/20 left-[423.2px] w-6 -top-[2.6px] rounded-full absolute">
                     {"\u00A0\u00A0\u00A0"}
                   </span>
                   <FaXmark className="hover:rounded-full" size={20} />
@@ -165,14 +165,14 @@ const MyRecipes = () => {
                     onSubmit={handleFormUpdate}
                     className="w-full py-5 flex flex-col gap-3 p-4"
                   >
-                    <p className="text-xl font-semibold text-center text-[#7B3F00]/70">
+                    <p className="text-xl font-semibold text-center text-accent/70">
                       Update Recipe
                     </p>
-                    <p className="border-b-2 mb-2 border-[#7B3F00]/70"></p>
+                    <p className="border-b-2 mb-2 border-accent/70"></p>
 
                     {/* Image URL Field */}
 
-                    <label className="flex items-center gap-2 text-[#7B3F00]/70">
+                    <label className="flex items-center gap-2 text-accent/70">
                       <FaRegImage size={24} /> Image URL
                     </label>
                     <input
@@ -180,11 +180,11 @@ const MyRecipes = () => {
                       name="image"
                       defaultValue={selectedRecipe?.image}
                       placeholder="Enter image URL"
-                      className="px-4 py-3 border border-[#7B3F00] rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
                     />
 
                     {/* Title */}
-                    <label className="flex items-center gap-2 text-[#7B3F00]/70">
+                    <label className="flex items-center gap-2 text-accent/70">
                       <MdTitle size={24} /> Title
                     </label>
                     <input
@@ -192,44 +192,44 @@ const MyRecipes = () => {
                       name="title"
                       defaultValue={selectedRecipe?.title}
                       placeholder="Recipe Title"
-                      className="px-4 py-3 border border-[#7B3F00] rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
                     />
 
                     {/* Ingredients */}
 
-                    <label className="flex items-center gap-2 text-[#7B3F00]/70">
+                    <label className="flex items-center gap-2 text-accent/70">
                       <GiKnifeFork size={24} /> Ingredients
                     </label>
                     <textarea
                       name="ingredients"
                       defaultValue={selectedRecipe?.ingredients}
                       placeholder="List ingredients separated by commas"
-                      className="px-4 py-3 border border-[#7B3F00] rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
                       rows={3}
                     />
 
                     {/* Instructions */}
 
-                    <label className="flex items-center gap-2 text-[#7B3F00]/70">
+                    <label className="flex items-center gap-2 text-accent/70">
                       <PiBookOpenTextLight size={24} /> Instructions
                     </label>
                     <textarea
                       name="instructions"
                       defaultValue={selectedRecipe?.instructions}
                       placeholder="Step-by-step preparation instructions"
-                      className="px-4 py-3 border border-[#7B3F00] rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
                       rows={3}
                     />
 
                     {/* Cuisine Type */}
 
-                    <label className="flex items-center gap-2 text-[#7B3F00]/70">
+                    <label className="flex items-center gap-2 text-accent/70">
                       Cuisine Type
                     </label>
                     <select
                       name="cuisineType"
                       defaultValue={selectedRecipe?.cuisineType}
-                      className="px-4 py-3 border border-[#7B3F00] rounded-xl bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
                     >
                       {cuisines.map((type) => (
                         <option key={type}>{type}</option>
@@ -238,7 +238,7 @@ const MyRecipes = () => {
 
                     {/* Preparation Time */}
 
-                    <label className="flex items-center gap-2 text-[#7B3F00]/70">
+                    <label className="flex items-center gap-2 text-accent/70">
                       <MdTimer size={24} /> Preparation Time (mins)
                     </label>
                     <input
@@ -246,19 +246,19 @@ const MyRecipes = () => {
                       name="prepTime"
                       defaultValue={selectedRecipe?.prepTime}
                       placeholder="E.g. 30"
-                      className="px-4 py-3 border border-[#7B3F00] rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
                     />
 
                     {/* Categories */}
 
-                    <label className="flex items-center gap-2 text-[#7B3F00]/70">
+                    <label className="flex items-center gap-2 text-accent/70">
                       <BiCategory size={24} /> Categories
                     </label>
                     <div className="flex flex-wrap gap-3">
                       {categoryOptions.map((cat) => (
                         <label
                           key={cat}
-                          className="flex items-center gap-2 text-[#7B3F00]/70"
+                          className="flex items-center gap-2 text-accent/70"
                         >
                           <input
                             type="checkbox"

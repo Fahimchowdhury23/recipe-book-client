@@ -38,21 +38,21 @@ const RecipeDetails = () => {
   };
 
   return (
-    <div className="py-8">
+    <div className="py-4 lg:py-6">
       <title>Recipe Details | RecipeBook</title>
-      <h1 className="text-center font-semibold text-3xl text-[#7B3F00] pb-4">
+      <h1 className="text-center font-semibold text-2xl lg:text-3xl text-accent pb-2 lg:pb-4">
         <span className="font-extrabold">{likes}</span> People are interested in
         this recipe
       </h1>
 
-      <div className="max-w-2xl lg:max-w-3xl mx-auto p-6 bg-white rounded-2xl shadow-xl space-y-5">
+      <div className="max-w-2xl lg:max-w-4xl mx-auto p-4 bg-white rounded-2xl shadow-xl space-y-5">
         <img
           src={image}
           alt={title}
-          className="w-full h-64 object-cover rounded-xl"
+          className="w-full h-85 lg:h-85 object-cover rounded-xl"
         />
 
-        <h2 className="text-3xl font-bold">{title}</h2>
+        <h2 className="text-2xl lg:text-3xl font-bold text-accent">{title}</h2>
 
         <div className="flex items-center gap-3">
           <img
@@ -61,53 +61,54 @@ const RecipeDetails = () => {
             className="w-10 h-10 rounded-full"
           />
           <div>
-            <p className="text-xl font-medium">{displayName}</p>
-            <p className="text-gray-500">{email}</p>
+            <p className="text-lg lg:text-xl font-medium">{displayName}</p>
+            <p className="lg:text-lg text-gray-500">{email}</p>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 text-sm text-gray-700">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 lg:text-lg text-gray-700">
           <p>
-            <span className="text-lg font-semibold">Cuisine:</span>
+            <span className="text-lg lg:text-xl font-semibold">Cuisine:</span>
             {cuisineType}
           </p>
           <p>
-            <span className="text-lg font-semibold">Prep Time:</span> {prepTime}
+            <span className="text-lg lg:text-xl font-semibold">Prep Time:</span>{" "}
+            {prepTime}
             mins
           </p>
           <p>
-            <span className="text-lg font-semibold">Category:</span>
+            <span className="text-lg lg:text-xl font-semibold">Category:</span>
             {categories}
           </p>
 
-          <div className="space-y-2">
-            <p className="flex items-center gap-1">
-              <span className="text-lg font-semibold">Like : </span>
-              {likes}
-            </p>
-
+          <div>
             <button
               onClick={() => handleLike(_id)}
-              className={`btn flex items-center text-md items text-white px-5 border-none rounded  
+              className={`btn flex items-center lg:text-lg items text-white px-5 border-none rounded  
                 ${
                   user.email === email
                     ? "btn-disabled cursor-not-allowed"
                     : "bg-blue-500 hover:bg-blue-600 cursor-pointer"
                 }`}
             >
-              <BiSolidLike size={18} /> Like
+              <BiSolidLike className="flex items-center" size={18} /> Like :{" "}
+              {likes}
             </button>
           </div>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold">Ingredients</h3>
-          <p className="mt-1 text-gray-700">{ingredients}</p>
+          <h3 className="text-xl lg:text-2xl font-semibold text-secondary">
+            Ingredients
+          </h3>
+          <p className="mt-1 lg:text-lg text-gray-700">{ingredients}</p>
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold">Instructions</h3>
-          <p className="mt-1 text-gray-700">{instructions}</p>
+          <h3 className="text-xl lg:text-2xl font-semibold text-secondary">
+            Instructions
+          </h3>
+          <p className="mt-1 lg:text-lg text-gray-700">{instructions}</p>
         </div>
       </div>
     </div>

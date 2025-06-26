@@ -13,11 +13,24 @@
 
   --color-primary: #d8afa9;
   --color-secondary: #5b4141;
+  --color-accent: #7b3f00;
   --color-base-100: #f4eadf;
+  --color-base-200: #ffffff;
+}
+
+@plugin "daisyui/theme" {
+  name: "dark";
+  default: true;
+
+  --color-primary: #121212;
+  --color-secondary: #ffffff;
+  --color-accent: #ffffff;
+  --color-base-100: #2e2e2e;
+  --color-base-200: #000000;
 }
 
 .nav-link {
-  @apply relative rounded px-2 lg:px-3 py-1 lg:text-xl backdrop-blur-md 
+  @apply relative rounded px-2 lg:px-3 py-1 backdrop-blur-md 
 text-secondary transition-transform ease-out duration-150;
 }
 .nav-link.active {

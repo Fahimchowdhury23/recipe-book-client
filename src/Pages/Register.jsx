@@ -137,16 +137,16 @@ const Register = () => {
 
         <form onSubmit={handleRegister} className="flex flex-col gap-3">
           <div className="flex items-center py-3">
-            <p className="border-b-2 w-[20%] border-[#7B3F00]/70"></p>
-            <p className="text-center w-[60%] text-[#7B3F00]/70">
+            <p className="border-b-2 w-[20%] border-accent/70"></p>
+            <p className="text-center w-[60%] text-accent/70">
               Or Continue by filling up this form
             </p>
-            <p className="border-b-2 w-[20%] border-[#7B3F00]/70"></p>
+            <p className="border-b-2 w-[20%] border-accent/70"></p>
           </div>
 
           {/* Name Field */}
 
-          <label className="flex items-center gap-2 text-[#7B3F00]/70">
+          <label className="flex items-center gap-2 text-accent/70">
             <FaRegCircleUser size={24} />
             Username
           </label>
@@ -161,7 +161,7 @@ const Register = () => {
 
           {/* Photo URL Field */}
 
-          <label className="flex items-center gap-2 text-[#7B3F00]/70">
+          <label className="flex items-center gap-2 text-accent/70">
             <HiOutlinePhotograph size={24} />
             Photo URL
           </label>
@@ -175,7 +175,7 @@ const Register = () => {
 
           {/* Email Field */}
 
-          <label className="flex items-center gap-2 text-[#7B3F00]/70">
+          <label className="flex items-center gap-2 text-accent/70">
             <HiOutlineMail size={24} />
             Email
           </label>
@@ -190,7 +190,7 @@ const Register = () => {
 
           {/* Password Field */}
 
-          <label className="flex items-center gap-2 text-[#7B3F00]/70">
+          <label className="flex items-center gap-2 text-accent/70">
             <MdLockOutline size={24} /> Password
           </label>
 
@@ -228,7 +228,7 @@ const Register = () => {
 
         <Link
           to="/auth/login"
-          className="font-semibold mt-6 flex justify-center hover:underline text-[#7B3F00]"
+          className="font-semibold mt-6 flex justify-center hover:underline text-accent"
         >
           Already have an account?
         </Link>

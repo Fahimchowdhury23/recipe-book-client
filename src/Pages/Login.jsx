@@ -107,7 +107,7 @@ const Login = () => {
       <title>Login Page | Recipe Book</title>
       <div className="grid grid-cols-1 max-w-xl lg:max-w-full mx-auto lg:mx-0 gap-6 lg:gap-0 lg:grid-cols-2">
         <div className="flex flex-col w-full rounded-xl lg:rounded-r-none items-center justify-center bg-[#EDC9AF]">
-          <h2 className="text-center pt-6 lg:pt-0 text-4xl font-bold text-[#7B3F00] drop-shadow mb-8">
+          <h2 className="text-center pt-6 lg:pt-0 text-4xl font-bold text-accent drop-shadow mb-8">
             {state ? "You have to Login first!" : "Welcome Back!"}
           </h2>
           <img
@@ -138,16 +138,16 @@ const Login = () => {
 
             <form onSubmit={handleLogIn} className="flex flex-col gap-3">
               <div className="flex items-center py-3">
-                <p className="border-b-2 w-[15%] lg:w-[20%] border-[#7B3F00]/70"></p>
-                <p className="text-center w-[70%] lg:w-[60%] text-[#7B3F00]/70">
+                <p className="border-b-2 w-[15%] lg:w-[20%] border-accent/70"></p>
+                <p className="text-center w-[70%] lg:w-[60%] text-accent/70">
                   Or Continue with Email / Password
                 </p>
-                <p className="border-b-2 w-[15%] lg:w-[20%] border-[#7B3F00]/70"></p>
+                <p className="border-b-2 w-[15%] lg:w-[20%] border-accent/70"></p>
               </div>
 
               {/* Email Field*/}
 
-              <label className="flex items-center gap-2 text-[#7B3F00]/70">
+              <label className="flex items-center gap-2 text-accent/70">
                 <HiOutlineMail size={24} />
                 Email
               </label>
@@ -162,7 +162,7 @@ const Login = () => {
 
               {/* Password Field */}
 
-              <label className="flex items-center gap-2 text-[#7B3F00]/70">
+              <label className="flex items-center gap-2 text-accent/70">
                 <MdLockOutline size={24} /> Password
               </label>
 
@@ -202,11 +202,11 @@ const Login = () => {
               </button>
             </form>
 
-            <p className="mt-6 justify-center flex gap-2 text-[#7B3F00]/80">
+            <p className="mt-6 justify-center flex gap-2 text-accent/80">
               Are you new here?
               <Link
                 to="/auth/register"
-                className="font-semibold hover:underline text-[#7B3F00]"
+                className="font-semibold hover:underline text-accent"
               >
                 Register
               </Link>

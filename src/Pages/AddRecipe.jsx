@@ -58,13 +58,13 @@ const AddRecipe = () => {
         onSubmit={handleFormSubmit}
         className="w-9/12 mx-auto py-5 flex flex-col gap-3 p-4"
       >
-        <p className="w-10/12 mb-3 text-2xl font-semibold mx-auto text-center text-[#7B3F00]/70">
+        <p className="w-10/12 mb-3 text-2xl font-semibold mx-auto text-center text-accent/70">
           Add a New Recipe
         </p>
-        <p className="border-b-2 w-10/12 mx-auto border-[#7B3F00]/70"></p>
+        <p className="border-b-2 w-10/12 mx-auto border-accent/70"></p>
 
         {/* Image URL */}
-        <label className="flex items-center gap-2 text-[#7B3F00]/70">
+        <label className="flex items-center gap-2 text-accent/70">
           <FaRegImage size={24} /> Image URL
         </label>
         <input
@@ -76,7 +76,7 @@ const AddRecipe = () => {
         />
 
         {/* Title */}
-        <label className="flex items-center gap-2 text-[#7B3F00]/70">
+        <label className="flex items-center gap-2 text-accent/70">
           <MdTitle size={24} /> Title
         </label>
         <input
@@ -89,7 +89,7 @@ const AddRecipe = () => {
 
         {/* Ingredients */}
 
-        <label className="flex items-center gap-2 text-[#7B3F00]/70">
+        <label className="flex items-center gap-2 text-accent/70">
           <GiKnifeFork size={24} /> Ingredients
         </label>
         <textarea
@@ -102,7 +102,7 @@ const AddRecipe = () => {
 
         {/* Instructions */}
 
-        <label className="flex items-center gap-2 text-[#7B3F00]/70">
+        <label className="flex items-center gap-2 text-accent/70">
           <PiBookOpenTextLight size={24} /> Instructions
         </label>
         <textarea
@@ -115,7 +115,7 @@ const AddRecipe = () => {
 
         {/* Cuisine Type */}
 
-        <label className="flex items-center gap-2 text-[#7B3F00]/70">
+        <label className="flex items-center gap-2 text-accent/70">
           Cuisine Type
         </label>
         <select
@@ -129,7 +129,7 @@ const AddRecipe = () => {
 
         {/* Preparation Time */}
 
-        <label className="flex items-center gap-2 text-[#7B3F00]/70">
+        <label className="flex items-center gap-2 text-accent/70">
           <MdTimer size={24} /> Preparation Time (mins)
         </label>
         <input
@@ -142,15 +142,12 @@ const AddRecipe = () => {
 
         {/* Categories */}
 
-        <label className="flex items-center gap-2 text-[#7B3F00]/70">
+        <label className="flex items-center gap-2 text-accent/70">
           <BiCategory size={24} /> Categories
         </label>
         <div className="flex flex-wrap gap-3">
           {categoryOptions.map((cat) => (
-            <label
-              key={cat}
-              className="flex items-center gap-2 text-[#7B3F00]/70"
-            >
+            <label key={cat} className="flex items-center gap-2 text-accent/70">
               <input
                 type="checkbox"
                 name="categories"

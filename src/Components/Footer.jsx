@@ -1,16 +1,16 @@
 import React from "react";
 import { FaDiscord, FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
-import { Link } from "react-router";
+import { Link, NavLink } from "react-router";
 
 const Footer = () => {
   return (
-    <footer className="footer footer-horizontal footer-center bg-primary rounded p-8">
+    <footer className="footer gap-4 lg:gap-5 footer-horizontal footer-center bg-primary rounded p-5 lg:p-8">
       <div className="flex items-center gap-1">
         <Link to="/">
           <img
             className="w-14 h-14 cursor-pointer"
             src="https://i.ibb.co/sdgpf1pV/illustration-cooking-logo-solid-background-852896-5161-removebg-preview.png"
-            alt=""
+            alt="logo"
           />
         </Link>
         <Link to="/">
@@ -19,12 +19,25 @@ const Footer = () => {
           </h1>
         </Link>
       </div>
-      <nav className="grid grid-flow-col text-xl text-[#5B4141] font-medium gap-4">
-        <a className="link link-hover">About us</a>
-        <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+
+      <nav className="grid grid-flow-col text-lg text-[#5B4141] font-medium">
+        <NavLink className="nav-link" to="/">
+          Home
+        </NavLink>
+        <NavLink className="nav-link" to="/allRecipes">
+          All Recipes
+        </NavLink>
+
+        <NavLink className="nav-link" to="aboutUs">
+          About Us
+        </NavLink>
+        <NavLink className="nav-link" to="contact">
+          Contact
+        </NavLink>
       </nav>
+
+      {/* Social Icons with Links */}
+
       <nav>
         <div className="flex gap-5">
           <a
@@ -59,7 +72,7 @@ const Footer = () => {
       </nav>
 
       <aside>
-        <p className="text-lg text-[#4A3F3F]">
+        <p className="text-lg text-accent">
           Copyright © {new Date().getFullYear()} - All right reserved by Recipe
           Book Inc.
         </p>

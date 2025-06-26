@@ -11,6 +11,8 @@ import ErrorPage from "../Components/ErrorPage";
 import PrivateRoute from "../Provider/PrivateRoute";
 import RecipeDetails from "../Pages/RecipeDetails";
 import Loader from "../Components/Loader";
+import Features from "../Pages/Features";
+import Contact from "../Pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,15 @@ const router = createBrowserRouter([
           fetch("https://recipe-book-server-alpha.vercel.app/recipes"),
         element: <AllRecipes></AllRecipes>,
         hydrateFallbackElement: <Loader></Loader>,
+      },
+
+      {
+        path: "features",
+        element: <Features></Features>,
+      },
+      {
+        path: "contact",
+        element: <Contact></Contact>,
       },
       {
         path: "addRecipe",

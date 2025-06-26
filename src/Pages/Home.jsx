@@ -9,7 +9,7 @@ import { Typewriter } from "react-simple-typewriter";
 const Home = () => {
   return (
     <section className="pt-4 lg:pt-6">
-      <h1 className="text-secondary text-3xl lg:text-4xl pb-5 font-bold text-center">
+      <h1 className="text-secondary text-2xl lg:text-4xl pb-5 font-bold text-center">
         Browse, Like & Organize - &nbsp;
         <span>
           <Typewriter
