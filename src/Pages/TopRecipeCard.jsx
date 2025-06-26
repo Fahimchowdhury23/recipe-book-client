@@ -13,7 +13,9 @@ const TopRecipeCard = ({ topRecipe }) => {
       </Link>
 
       <div className="p-3 space-y-2 flex-1">
-        <h2 className="text-xl font-semibold text-accent">{topRecipe.title}</h2>
+        <h2 className="text-xl font-semibold text-black/80">
+          {topRecipe.title}
+        </h2>
         <p className="text-lg text-gray-500">
           Cuisine: {topRecipe.cuisineType}
         </p>

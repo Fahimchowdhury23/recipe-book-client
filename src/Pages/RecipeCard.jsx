@@ -13,7 +13,9 @@ const RecipeCard = ({ recipe }) => {
       </Link>
 
       <div className="p-4 space-y-2 flex-1">
-        <h2 className="text-xl font-semibold text-accent">{recipe.title}</h2>
+        <h2 className="text-xl font-semibold text-black opacity-80">
+          {recipe.title}
+        </h2>
         <p className="text-gray-500">Cuisine: {recipe.cuisineType}</p>
         <div className="flex items-center gap-2">
           <img

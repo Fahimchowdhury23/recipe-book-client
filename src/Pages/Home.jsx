@@ -5,11 +5,12 @@ import SectionTwo from "../Components/SectionTwo";
 import TopRecipes from "./TopRecipes";
 import Loader from "../Components/Loader";
 import { Typewriter } from "react-simple-typewriter";
+import Newsletter from "./Newsletter";
 
 const Home = () => {
   return (
-    <section className="pt-4 lg:pt-6">
-      <h1 className="text-secondary text-2xl lg:text-4xl pb-5 font-bold text-center">
+    <section className="pt-2 md:pt-4 lg:pt-6">
+      <h1 className="text-secondary whitespace-nowrap text-lg md:text-2xl lg:text-4xl pb-5 font-bold text-center">
         Browse, Like & Organize - &nbsp;
         <span>
           <Typewriter
@@ -35,6 +36,7 @@ const Home = () => {
         <TopRecipes></TopRecipes>
       </Suspense>
       <SectionOne></SectionOne>
+      <Newsletter></Newsletter>
       <SectionTwo></SectionTwo>
     </section>
   );

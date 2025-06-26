@@ -72,7 +72,7 @@ const AddRecipe = () => {
           name="image"
           required
           placeholder="Enter image URL"
-          className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
         />
 
         {/* Title */}
@@ -84,7 +84,7 @@ const AddRecipe = () => {
           name="title"
           required
           placeholder="Recipe Title"
-          className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
         />
 
         {/* Ingredients */}
@@ -96,7 +96,7 @@ const AddRecipe = () => {
           name="ingredients"
           required
           placeholder="List ingredients separated by commas"
-          className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
           rows={3}
         />
 
@@ -109,7 +109,7 @@ const AddRecipe = () => {
           name="instructions"
           required
           placeholder="Step-by-step preparation instructions"
-          className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
           rows={4}
         />
 
@@ -137,7 +137,7 @@ const AddRecipe = () => {
           name="prepTime"
           required
           placeholder="E.g. 30"
-          className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
+          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
         />
 
         {/* Categories */}

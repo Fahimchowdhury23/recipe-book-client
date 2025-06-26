@@ -38,9 +38,9 @@ const RecipeDetails = () => {
   };
 
   return (
-    <div className="py-4 lg:py-6">
+    <div className="p-3 py-4 lg:p-6">
       <title>Recipe Details | RecipeBook</title>
-      <h1 className="text-center font-semibold text-2xl lg:text-3xl text-accent pb-2 lg:pb-4">
+      <h1 className="text-center font-semibold whitespace-nowrap text-xl md:text-2xl lg:text-3xl text-accent pb-2 lg:pb-4">
         <span className="font-extrabold">{likes}</span> People are interested in
         this recipe
       </h1>

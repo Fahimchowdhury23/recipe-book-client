@@ -100,7 +100,7 @@ const MyRecipes = () => {
           text: "This action cannot be undone!",
           icon: "question",
           showCancelButton: true,
-          confirmButtonColor: "#3085d6",
+          confirmButtonColor: "#7b3f00",
           cancelButtonColor: "#d33",
           confirmButtonText: "Yes, delete it!",
         }).then((result) => {
@@ -123,14 +123,14 @@ const MyRecipes = () => {
   }
 
   return (
-    <section>
+    <section className="pb-5">
       <title>My Recipe | Recipe Book</title>
-      <h2 className="text-center pt-8 text-3xl font-bold text-secondary drop-shadow mb-2">
+      <h2 className="text-center pt-3 md:pt-5 lg:pt-8 text-3xl font-bold text-secondary drop-shadow mb-2">
         My Recipes
       </h2>
       <p className="border-b-3 w-1/3 mx-auto border-accent/70 mb-6"></p>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 w-11/12 mx-auto p-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 xl:gap-4 w-11/12 mx-auto xl:p-6">
         {/* user added recipe */}
 
         {myData.map((recipe) => (
@@ -146,10 +146,7 @@ const MyRecipes = () => {
 
         {selectedRecipe && (
           <div>
-            <dialog
-              id="my_modal_5"
-              className="modal modal-bottom sm:modal-middle"
-            >
+            <dialog id="my_modal_5" className="modal modal-middle">
               <div className="modal-box border-2 border-accent/70 rounded-2xl">
                 <p
                   onClick={closeModal}
@@ -180,7 +177,7 @@ const MyRecipes = () => {
                       name="image"
                       defaultValue={selectedRecipe?.image}
                       placeholder="Enter image URL"
-                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
                     />
 
                     {/* Title */}
@@ -192,7 +189,7 @@ const MyRecipes = () => {
                       name="title"
                       defaultValue={selectedRecipe?.title}
                       placeholder="Recipe Title"
-                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
                     />
 
                     {/* Ingredients */}
@@ -204,7 +201,7 @@ const MyRecipes = () => {
                       name="ingredients"
                       defaultValue={selectedRecipe?.ingredients}
                       placeholder="List ingredients separated by commas"
-                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
                       rows={3}
                     />
 
@@ -217,7 +214,7 @@ const MyRecipes = () => {
                       name="instructions"
                       defaultValue={selectedRecipe?.instructions}
                       placeholder="Step-by-step preparation instructions"
-                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
                       rows={3}
                     />
 
@@ -229,7 +226,7 @@ const MyRecipes = () => {
                     <select
                       name="cuisineType"
                       defaultValue={selectedRecipe?.cuisineType}
-                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-primary focus:outline-none focus:ring-1 focus:ring-secondary"
                     >
                       {cuisines.map((type) => (
                         <option key={type}>{type}</option>
@@ -246,7 +243,7 @@ const MyRecipes = () => {
                       name="prepTime"
                       defaultValue={selectedRecipe?.prepTime}
                       placeholder="E.g. 30"
-                      className="px-4 py-3 border border-accent rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
+                      className="px-4 py-3 border border-accent rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
                     />
 
                     {/* Categories */}

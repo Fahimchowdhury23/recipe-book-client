@@ -1,5 +1,6 @@
 import React from "react";
 import { MdDelete } from "react-icons/md";
+import { Link } from "react-router";
 
 const MyRecipeCard = ({ recipe, handleDelete, setSelectedRecipe }) => {
   const openModal = () => {
@@ -7,12 +8,14 @@ const MyRecipeCard = ({ recipe, handleDelete, setSelectedRecipe }) => {
   };
 
   return (
-    <div className="bg-white rounded-2xl p-4 shadow-md overflow-hidden flex flex-col">
-      <img
-        src={recipe.image}
-        alt={recipe.title}
-        className="h-60 w-full rounded-xl object-cover"
-      />
+    <div className="bg-white rounded-2xl p-2 xl:p-4 shadow-md overflow-hidden flex flex-col">
+      <Link to={`/recipeDetails/${recipe._id}`}>
+        <img
+          src={recipe.image}
+          alt={recipe.title}
+          className="h-48 xl:h-60 w-full rounded-xl object-cover"
+        />
+      </Link>
 
       {recipe.displayName && (
         <div className="flex pl-4 items-center gap-2 mt-3">
@@ -27,8 +30,10 @@ const MyRecipeCard = ({ recipe, handleDelete, setSelectedRecipe }) => {
         </div>
       )}
 
-      <div className="p-4 space-y-2 flex-1 flex flex-col">
-        <h2 className="text-2xl font-semibold">{recipe.title}</h2>
+      <div className="p-2 xl:p-4 lg:space-y-2 flex-1 flex flex-col">
+        <h2 className="text-xl lg:text-2xl font-semibold text-black opacity-80">
+          {recipe.title}
+        </h2>
 
         <p className="text-gray-600">
           <strong>Ingredients:</strong> {recipe.ingredients}
@@ -52,7 +57,7 @@ const MyRecipeCard = ({ recipe, handleDelete, setSelectedRecipe }) => {
           </p>
         </div>
 
-        <div className="flex gap-3 mt-auto">
+        <div className="flex lg:justify-start justify-between gap-3 mt-auto">
           <button
             onClick={() => openModal()}
             className="bg-green-500 btn border-none hover:bg-green-600 text-white px-4 py-1 rounded cursor-pointer"
