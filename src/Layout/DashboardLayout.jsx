@@ -1,8 +1,8 @@
 import React from "react";
-import Dashboard from "../Pages/Dashboard";
 import { Link, Outlet, useNavigation } from "react-router";
 import ScrollToTop from "../Components/ScrollToTop";
 import { GiHamburgerMenu } from "react-icons/gi";
+import Loader from "../Components/Loader";
 
 const DashboardLayout = () => {
   const { state } = useNavigation();
