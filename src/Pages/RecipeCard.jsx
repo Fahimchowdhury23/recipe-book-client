@@ -12,7 +12,7 @@ const RecipeCard = ({ recipe }) => {
         />
       </Link>
 
-      <div className="p-2 lg:p-3 space-y-1 lg:space-y-2 flex-1">
+      <div className="p-2 space-y-1 lg:space-y-2 flex-1">
         <h2 className="text-xl font-semibold text-black opacity-80">
           {recipe.title}
         </h2>

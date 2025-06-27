@@ -78,12 +78,13 @@ const Navbar = () => {
 
         {user && (
           <>
-            <NavLink className="nav-link" to="/addRecipe">
+            {/* <NavLink className="nav-link" to="/addRecipe">
               Add Recipe
             </NavLink>
             <NavLink to={`/myRecipes/${user?.email}`} className="nav-link">
               My Recipes
-            </NavLink>
+            </NavLink> */}
+            <NavLink to="/dashboard">Dashboard</NavLink>
           </>
         )}
 

@@ -13,6 +13,8 @@ import RecipeDetails from "../Pages/RecipeDetails";
 import Loader from "../Components/Loader";
 import Features from "../Pages/Features";
 import Contact from "../Pages/Contact";
+import Dashboard from "../Pages/Dashboard";
+import DashboardLayout from "../Layout/DashboardLayout";
 
 const router = createBrowserRouter([
   {
@@ -40,14 +42,6 @@ const router = createBrowserRouter([
         element: <Contact></Contact>,
       },
       {
-        path: "addRecipe",
-        element: (
-          <PrivateRoute>
-            <AddRecipe></AddRecipe>
-          </PrivateRoute>
-        ),
-      },
-      {
         path: "/myRecipes/:email",
         element: (
           <PrivateRoute>
@@ -70,6 +64,40 @@ const router = createBrowserRouter([
       },
     ],
   },
+
+  // Dashboard Route Started
+
+  {
+    path: "/dashboard",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        index: true,
+        loader: () =>
+          fetch("https://recipe-book-server-alpha.vercel.app/recipes"),
+        element: (
+          <PrivateRoute>
+            <Dashboard></Dashboard>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/addRecipe",
+        element: (
+          <PrivateRoute>
+            <AddRecipe></AddRecipe>
+          </PrivateRoute>
+        ),
+      },
+    ],
+  },
+
+  // Authentication Route Started
+
   {
     path: "/auth",
     element: <AuthenticationLayout></AuthenticationLayout>,

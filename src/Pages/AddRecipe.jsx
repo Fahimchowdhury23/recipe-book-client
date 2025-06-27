@@ -56,12 +56,12 @@ const AddRecipe = () => {
       <title>Add a New Recipe | Recipe Book</title>
       <form
         onSubmit={handleFormSubmit}
-        className="w-9/12 mx-auto py-5 flex flex-col gap-3 p-4"
+        className="w-11/12 lg:w-8/12 mx-auto pb-5 flex flex-col gap-3"
       >
-        <p className="w-10/12 mb-3 text-2xl font-semibold mx-auto text-center text-accent/70">
+        <p className="w-10/12 text-xl md:text-2xl font-semibold mx-auto text-center text-accent/70">
           Add a New Recipe
         </p>
-        <p className="border-b-2 w-10/12 mx-auto border-accent/70"></p>
+        <p className="border-b-2 w-2/3 md:w-1/2 mx-auto border-accent/70"></p>
 
         {/* Image URL */}
         <label className="flex items-center gap-2 text-accent/70">

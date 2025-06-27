@@ -101,6 +101,14 @@ const AllRecipes = () => {
         </div>
       </div>
 
+      {sortedRecipes.length === 0 && (
+        <h2 className="flex justify-center items-center min-h-[40vh] md:min-h-[60vh] text-xl md:text-2xl lg:text-3xl font-medium text-secondary drop-shadow">
+          There is no&nbsp;
+          <span className="font-bold">{`${selectedCuisine} cuisine`}</span>
+          &nbsp;added yet!
+        </h2>
+      )}
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 pt-3 lg:pt-6 pb-10 w-11/12 xl:w-10/12 mx-auto">
         {sortedRecipes.map((recipe) => (
           <RecipeCard key={recipe._id} recipe={recipe}></RecipeCard>
