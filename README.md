@@ -135,23 +135,21 @@ To set up the project locally, follow these steps:
    npm install
    ```
 
-8. Run the development server (Choose one):
+Run the development server (Choose one):
 
-### Run normally
+1. Run normally :
 
----
+   ```bash
+   node index.js
+   ```
 
-```bash
-node index.js
-```
+Or,<br>
 
-### Or, If you have nodemon installed globally just run: (it will auto-restart on changes)
+2. If you have nodemon installed globally just run : (it will auto-restart on changes)
 
----
-
-```bash
-nodemon index.js
-```
+   ```bash
+   nodemon index.js
+   ```
 
 ---
 
