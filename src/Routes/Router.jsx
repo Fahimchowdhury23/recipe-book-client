@@ -42,14 +42,6 @@ const router = createBrowserRouter([
         element: <Contact></Contact>,
       },
       {
-        path: "/myRecipes/:email",
-        element: (
-          <PrivateRoute>
-            <MyRecipes></MyRecipes>
-          </PrivateRoute>
-        ),
-      },
-      {
         path: "/recipeDetails/:id",
         loader: ({ params }) =>
           fetch(
@@ -84,12 +76,21 @@ const router = createBrowserRouter([
             <Dashboard></Dashboard>
           </PrivateRoute>
         ),
+        hydrateFallbackElement: <Loader></Loader>,
       },
       {
         path: "/dashboard/addRecipe",
         element: (
           <PrivateRoute>
             <AddRecipe></AddRecipe>
+          </PrivateRoute>
+        ),
+      },
+      {
+        path: "/dashboard/myRecipes/:email",
+        element: (
+          <PrivateRoute>
+            <MyRecipes></MyRecipes>
           </PrivateRoute>
         ),
       },

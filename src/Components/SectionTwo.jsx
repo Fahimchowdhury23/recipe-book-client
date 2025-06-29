@@ -8,7 +8,7 @@ const SectionTwo = () => {
         {/* Left Side Text Content */}
 
         <div className="flex-1">
-          <h2 className="text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
             Bring Cooking to Life <br />
             with <span className="text-yellow-500">Flavor & Fun</span>
           </h2>
@@ -20,7 +20,7 @@ const SectionTwo = () => {
           </p>
 
           {/* Feature Highlights */}
-          <div className="grid grid-cols-2 gap-4 mb-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div className="flex items-start gap-3">
               <span className="text-yellow-500 text-2xl">📸</span>
               <div>

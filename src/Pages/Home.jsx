@@ -9,8 +9,8 @@ import Newsletter from "./Newsletter";
 
 const Home = () => {
   return (
-    <section className="pt-2 md:pt-4 lg:pt-6">
-      <h1 className="text-secondary whitespace-nowrap text-lg md:text-2xl lg:text-4xl pb-5 font-bold text-center">
+    <section className="lg:pt-2">
+      <h1 className="text-secondary whitespace-nowrap md:text-2xl lg:text-3xl pb-5 font-bold text-center">
         Browse, Like & Organize - &nbsp;
         <span>
           <Typewriter

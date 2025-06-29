@@ -82,6 +82,7 @@ const MyRecipes = () => {
               color: "white",
             },
           });
+          window.location.reload(); // to refresh the page after updating recipes
         } else {
           toast.dismiss();
           toast.error("No changes has been made");
@@ -90,21 +91,24 @@ const MyRecipes = () => {
   };
 
   const handleDelete = (id) => {
-    fetch(`https://recipe-book-server-alpha.vercel.app/recipes/user/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then(() => {
-        Swal.fire({
-          title: "Are you sure?",
-          text: "This action cannot be undone!",
-          icon: "question",
-          showCancelButton: true,
-          confirmButtonColor: "#7b3f00",
-          cancelButtonColor: "#d33",
-          confirmButtonText: "Yes, delete it!",
-        }).then((result) => {
-          if (result.isConfirmed) {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "This action cannot be undone!",
+      icon: "question",
+      showCancelButton: true,
+      confirmButtonColor: "#7b3f00",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(
+          `https://recipe-book-server-alpha.vercel.app/recipes/user/${id}`,
+          {
+            method: "DELETE",
+          }
+        )
+          .then((res) => res.json())
+          .then(() => {
             const remainingData = myData.filter((data) => data._id !== id);
             setMyData(remainingData);
 
@@ -113,9 +117,10 @@ const MyRecipes = () => {
               text: "Your recipe has been deleted.",
               icon: "success",
             });
-          }
-        });
-      });
+          })
+          .catch((error) => console.error(error));
+      }
+    });
   };
 
   if (recipeLoading || loading) {
@@ -125,12 +130,20 @@ const MyRecipes = () => {
   return (
     <section className="pb-5">
       <title>My Recipe | Recipe Book</title>
-      <h2 className="text-center pt-3 md:pt-5 lg:pt-8 text-3xl font-bold text-secondary drop-shadow mb-2">
+      <h2 className="text-center text-xl md:text-2xl lg:text-3xl font-bold text-secondary drop-shadow">
         My Recipes
       </h2>
-      <p className="border-b-3 w-1/3 mx-auto border-accent/70 mb-6"></p>
+      <p className="border-b-3 w-2/5 md:w-1/4 mx-auto border-accent/70 mb-3 lg:mb-5"></p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 xl:gap-4 w-11/12 mx-auto xl:p-6">
+      {myData.length === 0 && (
+        <div className="flex justify-center items-center min-h-[40vh] md:min-h-[60vh] text-xl md:text-2xl lg:text-3xl font-medium text-secondary drop-shadow">
+          <h2>
+            There is no <span className="font-bold">Recipe</span> added yet!
+          </h2>
+        </div>
+      )}
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 xl:gap-4 w-11/12 mx-auto">
         {/* user added recipe */}
 
         {myData.map((recipe) => (
@@ -160,7 +173,7 @@ const MyRecipes = () => {
                 <div>
                   <form
                     onSubmit={handleFormUpdate}
-                    className="w-full py-5 flex flex-col gap-3 p-4"
+                    className="w-full py-0 flex flex-col gap-3"
                   >
                     <p className="text-xl font-semibold text-center text-accent/70">
                       Update Recipe
@@ -258,7 +271,7 @@ const MyRecipes = () => {
                           className="flex items-center gap-2 text-accent/70"
                         >
                           <input
-                            type="checkbox"
+                            type="radio"
                             name="categories"
                             value={cat}
                             className="accent-primary"

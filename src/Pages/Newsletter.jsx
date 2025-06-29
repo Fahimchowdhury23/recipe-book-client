@@ -4,7 +4,7 @@ import { HiHandRaised } from "react-icons/hi2";
 
 const Newsletter = () => {
   return (
-    <div className="relative isolate overflow-hidden bg-secondary/50 py-16 sm:py-24 lg:py-30">
+    <div className="relative isolate overflow-hidden bg-secondary/50 py-12 sm:py-24 lg:py-30">
       <div className="mx-auto max-w-6xl lg:max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-10 lg:gap-y-16 lg:max-w-none lg:grid-cols-2">
           <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
@@ -40,16 +40,16 @@ const Newsletter = () => {
           </dl>
 
           <div className="max-w-xl lg:max-w-lg">
-            <h2 className="text-4xl font-semibold tracking-tight text-white">
+            <h2 className="text-3xl md:text-4xl font-semibold tracking-tight text-white">
               Subscribe to our Newsletter
             </h2>
 
-            <p className="mt-4 text-lg text-base-100">
+            <p className="mt-2 lg:mt-4 text-lg text-base-100">
               Get the latest recipes, cooking tips, and tasty updates delivered
               straight to your inbox. No spam, just flavor. 🍽️
             </p>
 
-            <div className="mt-6 flex max-w-md justify-center lg:justify-start gap-x-4">
+            <div className="mt-5 flex max-w-md justify-center lg:justify-start gap-x-3 md:gap-x-4">
               <label htmlFor="email-address" className="sr-only">
                 Email address
               </label>
@@ -66,7 +66,7 @@ const Newsletter = () => {
 
               <button
                 type="submit"
-                className="flex-none btn border-none rounded-md cursor-pointer bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-red-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+                className="flex-none btn border-none rounded-md cursor-pointer bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-red-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
               >
                 Subscribe
               </button>

@@ -5,16 +5,18 @@ import cookingAnimation from "../animations/Animation - 1748173156747.json";
 const SectionOne = () => {
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 pb-10 w-11/12 lg:w-10/12 mx-auto">
-      <section className="py-6 lg:py-12">
+      <section className="py-3 md:py-5 lg:py-8">
         <div className="max-w-6xl mx-auto text-center">
-          <h2 className="text-3xl font-bold mb-4">Why Cook With Us?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-2 lg:mb-3">
+            Why Cook With Us?
+          </h2>
           <p className="text-gray-600 max-w-2xl mx-auto">
             Discover thousands of recipes from around the world. Whether you're
             a beginner or a pro, our step-by-step guides, prep timers, and
             community ratings help you cook better every day.
           </p>
 
-          <div className="flex flex-col mx-auto gap-5 mt-6">
+          <div className="flex flex-col mx-auto gap-5 mt-3 md:mt-4 lg:mt-6">
             <div className="bg-white p-6 rounded-xl shadow">
               <h3 className="font-semibold text-lg">
                 👩‍🍳 Step-by-Step Instructions

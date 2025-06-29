@@ -37,13 +37,13 @@ const Contact = () => {
 
   return (
     <motion.div
-      className="max-w-7xl mx-auto px-6 py-12"
+      className="max-w-7xl mx-auto px-5 py-3 lg:py-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
       <motion.h2
-        className="text-4xl font-bold text-center text-accent mb-4"
+        className="text-2xl md:text-3xl font-bold text-center text-accent mb-2 md:mb-4"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -52,7 +52,7 @@ const Contact = () => {
       </motion.h2>
 
       <motion.p
-        className="text-lg  text-center mb-4 lg:mb-8 max-w-2xl mx-auto"
+        className="md:text-lg px-2 text-center mb-3 lg:mb-5 max-w-2xl mx-auto"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.2 }}

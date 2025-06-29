@@ -3,6 +3,7 @@ import { Link, NavLink, useNavigate } from "react-router";
 import AuthContext from "../Contexts/AuthContext";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
+import { HiMenuAlt1 } from "react-icons/hi";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
@@ -52,23 +53,62 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar fixed top-0 z-50 bg-base-100 p-3 flex justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
+    <div className="navbar fixed top-0 z-50 bg-base-100 px-1 py-0 lg:p-3 flex justify-between md:justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
+      <div className="dropdown dropdown-start md:hidden">
+        <div
+          tabIndex={0}
+          role="button"
+          className="btn border-0 px-3 btn-primary"
+        >
+          <HiMenuAlt1 size={20} />
+        </div>
+
+        <ul
+          tabIndex={0}
+          className="dropdown-content menu bg-base-100 rounded-box z-1 w-44 p-3 shadow-sm"
+        >
+          <div className="flex flex-col whitespace-nowrap font-medium text-[#4A3F3F] lg:gap-2">
+            <NavLink className="nav-link hover:bg-primary" to="/">
+              Home
+            </NavLink>
+            <NavLink className="nav-link hover:bg-primary" to="/allRecipes">
+              All Recipes
+            </NavLink>
+
+            {user && (
+              <>
+                <NavLink className="nav-link hover:bg-primary" to="/dashboard">
+                  Dashboard
+                </NavLink>
+              </>
+            )}
+
+            <NavLink className="nav-link hover:bg-primary" to="/features">
+              Features
+            </NavLink>
+            <NavLink className="nav-link hover:bg-primary" to="/contact">
+              Contact
+            </NavLink>
+          </div>
+        </ul>
+      </div>
+
       <div className="flex items-center gap-1">
         <Link to="/">
           <img
-            className="w-10 lg:w-12 h-10 lg:h-12 cursor-pointer"
+            className="w-7 h-7 md:w-10 md:h-10 lg:w-12 lg:h-12 cursor-pointer"
             src="https://i.ibb.co/sdgpf1pV/illustration-cooking-logo-solid-background-852896-5161-removebg-preview.png"
             alt=""
           />
         </Link>
         <Link to="/">
-          <h1 className="text-xl lg:text-3xl font-bold cursor-pointer text-accent">
+          <h1 className="text-lg md:text-2xl lg:text-3xl font-bold cursor-pointer text-accent">
             Recipe Book
           </h1>
         </Link>
       </div>
 
-      <div className="flex lg:text-xl whitespace-nowrap font-medium items-center text-[#4A3F3F]  lg:gap-2">
+      <div className="hidden md:flex items-center lg:text-xl whitespace-nowrap font-medium  text-[#4A3F3F] lg:gap-2">
         <NavLink className="nav-link" to="/">
           Home
         </NavLink>
@@ -78,13 +118,9 @@ const Navbar = () => {
 
         {user && (
           <>
-            {/* <NavLink className="nav-link" to="/addRecipe">
-              Add Recipe
+            <NavLink className="nav-link" to="/dashboard">
+              Dashboard
             </NavLink>
-            <NavLink to={`/myRecipes/${user?.email}`} className="nav-link">
-              My Recipes
-            </NavLink> */}
-            <NavLink to="/dashboard">Dashboard</NavLink>
           </>
         )}
 
@@ -100,7 +136,7 @@ const Navbar = () => {
 
       <div className="flex items-center gap-1 lg:gap-2">
         <button
-          className="cursor-pointer hover:bg-primary/60 rounded-full p-1"
+          className="cursor-pointer hover:bg-primary/60 rounded-full p-0.5 md:p-1"
           onClick={toggleTheme}
         >
           {theme === "dark" ? (
@@ -108,7 +144,7 @@ const Navbar = () => {
               {/* sun icon */}
 
               <svg
-                className="swap-on text-accent h-10 w-10 fill-current transition-transform duration-500 transform rotate-180"
+                className="swap-on text-accent w-8 h-8 md:w-10 md:h-10 fill-current transition-transform duration-500 transform rotate-180"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -120,7 +156,7 @@ const Navbar = () => {
               {/* moon icon */}
 
               <svg
-                className="swap-off text-accent h-10 w-10 fill-current transition-all duration-500 transform"
+                className="swap-off text-accent w-8 h-8 md:w-10 md:h-10 fill-current transition-all duration-500 transform"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -135,29 +171,36 @@ const Navbar = () => {
             {/* User Profile */}
 
             <div className="dropdown dropdown-end">
-              <div className="p-1.25 hover:bg-primary/60 rounded-full">
+              <div className="p-1 md:p-1.25 hover:bg-primary/60 rounded-full">
                 <div
                   tabIndex={0}
                   role="button"
                   className="btn btn-ghost btn-circle avatar avatar-online"
                 >
-                  <div className="w-10 rounded-full">
+                  <div className="w-8 md:w-10 rounded-full">
                     <img alt={user?.displayName} src={user?.photoURL} />
                   </div>
                 </div>
               </div>
               <ul
                 tabIndex={0}
-                className="menu dropdown-content bg-primary text-lg rounded-box z-1 mt-3 w-52 p-2"
+                className="menu dropdown-content bg-primary md:text-lg rounded-box z-1 mt-3 w-40 md:w-52 p-2"
               >
                 <li>
-                  <a onClick={() => navigate(`/myRecipes/${user?.email}`)}>
+                  <a
+                    className="hover:bg-base-100"
+                    onClick={() =>
+                      navigate(`dashboard/myRecipes/${user?.email}`)
+                    }
+                  >
                     {user?.displayName}
                   </a>
                 </li>
 
                 <li>
-                  <a onClick={handleSignOut}>Logout</a>
+                  <a className="hover:bg-base-100" onClick={handleSignOut}>
+                    Logout
+                  </a>
                 </li>
               </ul>
             </div>
@@ -170,7 +213,7 @@ const Navbar = () => {
               </button>
             </Link>
             <Link to="/auth/register">
-              <button className="text-accent lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
+              <button className="text-accent hidden md:flex lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
                 Register
               </button>
             </Link>

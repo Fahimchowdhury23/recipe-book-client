@@ -6,9 +6,11 @@ import { PiBookOpenTextLight } from "react-icons/pi";
 import toast from "react-hot-toast";
 import { use } from "react";
 import AuthContext from "../Contexts/AuthContext";
+import { useNavigate } from "react-router";
 
 const AddRecipe = () => {
   const { user, loading } = use(AuthContext);
+  const navigate = useNavigate();
   const { displayName, photoURL, email } = user;
   const categoryOptions = ["Breakfast", "Lunch", "Dinner", "Dessert", "Vegan"];
   const cuisines = [
@@ -48,6 +50,7 @@ const AddRecipe = () => {
           toast.dismiss();
           toast.success("Recipe added Successfully!");
         }
+        navigate(`/recipeDetails/${data.insertedId}`);
       });
   };
 
@@ -56,7 +59,7 @@ const AddRecipe = () => {
       <title>Add a New Recipe | Recipe Book</title>
       <form
         onSubmit={handleFormSubmit}
-        className="w-11/12 lg:w-8/12 mx-auto pb-5 flex flex-col gap-3"
+        className="w-11/12 lg:w-8/12 mx-auto pb-5 flex flex-col gap-2 lg:gap-3"
       >
         <p className="w-10/12 text-xl md:text-2xl font-semibold mx-auto text-center text-accent/70">
           Add a New Recipe
@@ -68,11 +71,11 @@ const AddRecipe = () => {
           <FaRegImage size={24} /> Image URL
         </label>
         <input
-          type="text"
+          type="url"
           name="image"
           required
-          placeholder="Enter image URL"
-          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
+          placeholder="Image URL"
+          className="px-3 md:px-4 md:py-3 py-2 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
         />
 
         {/* Title */}
@@ -84,7 +87,7 @@ const AddRecipe = () => {
           name="title"
           required
           placeholder="Recipe Title"
-          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
+          className="px-3 md:px-4 md:py-3 py-2 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary"
         />
 
         {/* Ingredients */}
@@ -96,7 +99,7 @@ const AddRecipe = () => {
           name="ingredients"
           required
           placeholder="List ingredients separated by commas"
-          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+          className="p-3 md:px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
           rows={3}
         />
 
@@ -109,21 +112,24 @@ const AddRecipe = () => {
           name="instructions"
           required
           placeholder="Step-by-step preparation instructions"
-          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
+          className="p-3 md:px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [resize:none]"
           rows={4}
         />
 
         {/* Cuisine Type */}
 
-        <label className="flex items-center gap-2 text-accent/70">
-          Cuisine Type
-        </label>
+        <label className="text-accent/70">Cuisine Type</label>
         <select
           name="cuisineType"
-          className="px-4 py-3 rounded-xl bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+          className="px-3 md:px-4 py-3  rounded-xl cursor-pointer bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
         >
           {cuisines.map((type) => (
-            <option key={type}>{type}</option>
+            <option
+              className="bg-primary/50 md:text-lg text-secondary cursor-pointer"
+              key={type}
+            >
+              {type}
+            </option>
           ))}
         </select>
 
@@ -135,9 +141,11 @@ const AddRecipe = () => {
         <input
           type="number"
           name="prepTime"
+          min={0}
+          max={60}
           required
           placeholder="E.g. 30"
-          className="px-4 py-3 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
+          className="px-3 md:px-4 md:py-3 py-2 rounded-xl bg-white text-primary placeholder-primary/70 focus:outline-none focus:ring-1 focus:ring-secondary [&::-webkit-inner-spin-button]:hidden [&::-webkit-outer-spin-button]:hidden [appearance:textfield]"
         />
 
         {/* Categories */}
@@ -149,7 +157,7 @@ const AddRecipe = () => {
           {categoryOptions.map((cat) => (
             <label key={cat} className="flex items-center gap-2 text-accent/70">
               <input
-                type="checkbox"
+                type="radio"
                 name="categories"
                 value={cat}
                 className="accent-primary"

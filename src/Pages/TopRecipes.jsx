@@ -14,7 +14,7 @@ const TopRecipes = () => {
       <h2 className="text-center pt-4 md:pt-6 lg:pt-10 text-2xl lg:text-3xl font-bold text-secondary drop-shadow mb-1 lg:mb-2">
         Top Recipes
       </h2>
-      <p className="border-b-3 w-1/3 mx-auto border-accent/70 md:mb-3 lg:mb-6"></p>
+      <p className="border-b-3 w-1/2 md:w-1/4 lg:w-1/5 mx-auto border-accent/70 md:mb-3 lg:mb-4"></p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 lg:gap-4 pt-4 pb-6 lg:pb-10 w-11/12 xl:w-10/12 mx-auto">
         {topRecipeData.map((topRecipe) => (

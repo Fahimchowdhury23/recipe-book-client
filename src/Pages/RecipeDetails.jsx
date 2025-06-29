@@ -45,11 +45,11 @@ const RecipeDetails = () => {
         this recipe
       </h1>
 
-      <div className="max-w-2xl lg:max-w-4xl mx-auto p-4 bg-white rounded-2xl shadow-xl space-y-5">
+      <div className="max-w-2xl lg:max-w-4xl mx-auto p-4 bg-white rounded-2xl shadow-xl space-y-2 md:space-y-3">
         <img
           src={image}
           alt={title}
-          className="w-full h-85 lg:h-85 object-cover rounded-xl"
+          className="w-full h-60 lg:h-85 object-cover rounded-xl"
         />
 
         <h2 className="text-2xl lg:text-3xl font-bold text-accent">{title}</h2>
@@ -66,7 +66,7 @@ const RecipeDetails = () => {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-2 lg:gap-4 lg:text-lg text-gray-700">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-2 lg:text-lg text-gray-700">
           <p>
             <span className="text-lg lg:text-xl font-semibold">Cuisine:</span>
             {cuisineType}
@@ -99,16 +99,16 @@ const RecipeDetails = () => {
 
         <div>
           <h3 className="text-xl lg:text-2xl font-semibold text-secondary">
-            Ingredients
+            Ingredients :
           </h3>
-          <p className="mt-1 lg:text-lg text-gray-700">{ingredients}</p>
+          <p className="lg:text-lg text-gray-700">{ingredients}</p>
         </div>
 
         <div>
           <h3 className="text-xl lg:text-2xl font-semibold text-secondary">
-            Instructions
+            Instructions :
           </h3>
-          <p className="mt-1 lg:text-lg text-gray-700">{instructions}</p>
+          <p className="lg:text-lg text-gray-700">{instructions}</p>
         </div>
       </div>
     </div>

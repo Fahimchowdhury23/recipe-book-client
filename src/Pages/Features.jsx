@@ -72,13 +72,13 @@ const Features = () => {
 
   return (
     <motion.div
-      className="max-w-4xl lg:max-w-7xl mx-auto p-5 lg:p-7"
+      className="max-w-4xl lg:max-w-7xl mx-auto p-4 lg:p-6"
       initial="hidden"
       animate="show"
       variants={container}
     >
       <motion.h1
-        className="text-4xl font-bold text-center mb-4 text-secondary"
+        className="text-2xl md:text-3xl font-bold text-center mb-2 md:mb-4 text-secondary"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -87,7 +87,7 @@ const Features = () => {
       </motion.h1>
 
       <motion.p
-        className="text-lg text-center text-secondary/70 mb-5 lg:mb-8 max-w-2xl mx-auto"
+        className="md:text-lg px-2 text-center text-secondary/70 mb-3 lg:mb-5 max-w-2xl mx-auto"
         variants={item}
       >
         A user-friendly and interactive recipe platform built for food lovers to
@@ -104,7 +104,7 @@ const Features = () => {
           >
             <div className="text-red-500 text-2xl">{feature.icon}</div>
             <div>
-              <h3 className="text-xl font-semibold text-base-200">
+              <h3 className="text-lg md:text-xl font-semibold text-base-200">
                 {feature.title}
               </h3>
               <p className="text-base-200">{feature.desc}</p>

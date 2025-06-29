@@ -112,13 +112,13 @@ const Register = () => {
   };
 
   return (
-    <section className="py-8">
+    <section className="py-4 lg:py-7">
       <title>Register Page | Recipe Book</title>
-      <h2 className="text-center text-3xl font-bold text-secondary drop-shadow mb-8">
+      <h2 className="text-center text-2xl lg:text-3xl font-bold text-secondary drop-shadow mb-2 lg:mb-4">
         Let's Get started!
       </h2>
 
-      <div className="w-full max-w-xl lg:max-w-2xl p-10 mx-auto rounded-3xl bg-white/20 backdrop-blur-xl shadow-xl">
+      <div className="w-full max-w-xl lg:max-w-2xl p-5 pb-3 md:px-8 mx-auto rounded-xl lg:rounded-2xl bg-white/20 backdrop-blur-xl shadow-xl">
         {/* Google Sign In */}
 
         <button
@@ -135,13 +135,16 @@ const Register = () => {
           )}
         </button>
 
-        <form onSubmit={handleRegister} className="flex flex-col gap-3">
-          <div className="flex items-center py-3">
-            <p className="border-b-2 w-[20%] border-accent/70"></p>
-            <p className="text-center w-[60%] text-accent/70">
+        <form
+          onSubmit={handleRegister}
+          className="flex flex-col gap-2 md:gap-3"
+        >
+          <div className="flex items-center pt-3 pb-1">
+            <p className="border-b-2 w-[10%] md:w-[20%] border-accent/70"></p>
+            <p className="text-center text-sm md:text-base w-[80%] md:w-[60%] text-accent/70">
               Or Continue by filling up this form
             </p>
-            <p className="border-b-2 w-[20%] border-accent/70"></p>
+            <p className="border-b-2 w-[10%] md:w-[20%] border-accent/70"></p>
           </div>
 
           {/* Name Field */}
@@ -155,7 +158,7 @@ const Register = () => {
             type="text"
             name="name"
             required
-            className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="px-3 py-2 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
             placeholder="Your Full Name"
           />
 
@@ -169,7 +172,7 @@ const Register = () => {
             type="text"
             name="photo"
             required
-            className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="px-3 py-2 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
             placeholder="Your Photo URL"
           />
 
@@ -184,7 +187,7 @@ const Register = () => {
             name="email"
             autoComplete="email"
             required
-            className="px-4 py-3 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+            className="px-3 py-2 rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
             placeholder="Email address"
           />
 
@@ -200,7 +203,7 @@ const Register = () => {
               name="password"
               autoComplete="current-password"
               required
-              className="px-4 py-3 w-full rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+              className="px-3 py-2 w-full rounded-xl bg-white text-secondary placeholder-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
               placeholder="Password"
             />
             <button
@@ -216,7 +219,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="w-full btn py-3 rounded-2xl border-none text-lg bg-primary text-secondary font-medium transition backdrop-blur-xl"
+            className="w-full btn py-2 rounded-2xl border-none text-lg bg-primary text-secondary font-medium transition backdrop-blur-xl"
           >
             {loading ? (
               <span className="loading loading-spinner text-secondary"></span>
@@ -226,12 +229,9 @@ const Register = () => {
           </button>
         </form>
 
-        <Link
-          to="/auth/login"
-          className="font-semibold mt-6 flex justify-center hover:underline text-accent"
-        >
-          Already have an account?
-        </Link>
+        <p className="font-semibold mt-3 w-1/2 mx-auto whitespace-nowrap flex items-center justify-center hover:underline text-accent">
+          <Link to="/auth/login">Already have an account?</Link>
+        </p>
       </div>
     </section>
   );
