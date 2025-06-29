@@ -152,9 +152,9 @@ To set up the project locally, follow these steps:
 - Make sure you have [Node.js](https://nodejs.org/) installed.
 - If you don’t have nodemon installed globally, you can run it with:
 
-  \```bash
+  ```bash
   npx nodemon index.js
-  \```
+  ```
 
 - Run frontend and backend servers simultaneously in separate terminal windows or tabs.
 
