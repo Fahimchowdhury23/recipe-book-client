@@ -83,7 +83,7 @@ Our application includes dedicated routes to handle errors gracefully:
 | `swiper`                  | Implements touch-enabled carousels for featured/top recipes             |
 | `tailwindcss`             | Utility-first CSS framework for responsive and clean design             |
 | `framer-motion`           | Adds smooth animations for features section and contact interactions    |
-| `recharts`                | Displays charts for visualizing recipe data                             |
+| `recharts`                | Displays charts for visualizing user's recipe data                      |
 
 Refer to `package.json` for the entire list of dependencies.
 
