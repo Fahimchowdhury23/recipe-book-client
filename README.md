@@ -139,13 +139,15 @@ To set up the project locally, follow these steps:
 
 ### Run normally
 
+---
+
 ```bash
 node index.js
 ```
 
-### Or,
+### Or, If you have nodemon installed globally just run: (it will auto-restart on changes)
 
-### If you have nodemon installed globally just run: (it will auto-restart on changes)
+---
 
 ```bash
 nodemon index.js
