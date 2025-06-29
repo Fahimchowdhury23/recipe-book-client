@@ -43,8 +43,6 @@ const Sidebar = () => {
     <div className="drawer">
       <input id="my-drawer" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content pl-4 pt-4">
-        {/* Page content here */}
-
         <label
           htmlFor="my-drawer"
           className="btn btn-info border-0 p-3 drawer-button"
@@ -71,15 +69,34 @@ const Sidebar = () => {
               </li>
 
               <li>
-                <Link to="/dashboard">Overview</Link>
+                <Link
+                  onClick={() =>
+                    (document.getElementById("my-drawer").checked = false)
+                  }
+                  to="/dashboard"
+                >
+                  Overview
+                </Link>
               </li>
 
               <li>
-                <Link to="/dashboard/addRecipe">Add Recipe</Link>
+                <Link
+                  onClick={() =>
+                    (document.getElementById("my-drawer").checked = false)
+                  }
+                  to="/dashboard/addRecipe"
+                >
+                  Add Recipe
+                </Link>
               </li>
 
               <li>
-                <Link to={`/dashboard/myRecipes/${user?.email}`}>
+                <Link
+                  onClick={() =>
+                    (document.getElementById("my-drawer").checked = false)
+                  }
+                  to={`/dashboard/myRecipes/${user?.email}`}
+                >
                   My Recipes
                 </Link>
               </li>
