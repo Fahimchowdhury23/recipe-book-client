@@ -138,13 +138,20 @@ To set up the project locally, follow these steps:
 8. Run the development server (Choose one):
 
    ```bash
-   node index.js
+
    ```
 
-   ```bash
-   nodemon index.js
-   ```
+### Run normally
 
+node index.js
+
+### Or,
+
+### If you have nodemon installed globally just run: (it will auto-restart on changes)
+
+nodemon index.js
+
+````
 ---
 
 ### Notes
@@ -152,9 +159,9 @@ To set up the project locally, follow these steps:
 - Make sure you have [Node.js](https://nodejs.org/) installed.
 - If you don’t have nodemon installed globally, you can run it with:
 
-  ```bash
-  npx nodemon index.js
-  ```
+```bash
+npx nodemon index.js
+````
 
 - Run frontend and backend servers simultaneously in separate terminal windows or tabs.
 
