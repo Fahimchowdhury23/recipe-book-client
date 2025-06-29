@@ -27,6 +27,11 @@ Recipe Book is built for food lovers to:
 - ❤️ **Like System** – Like recipes to help them reach the top of the list in real-time
 - 🔐 **Authentication** – Secure login/signUp using Firebase
 - 🔐 **Protected Routes** – Users must be authenticated to access personal features like add recipes, my recipes, etc.
+- 📊 **Dashboard** – Private dashboard where users can:
+  - View all their added recipes
+  - Track total recipe count
+  - 📈 Visualize likes per recipe using interactive charts (via Recharts)
+- 📱 **Fully Responsive** – Seamlessly adapts to all screen sizes: mobile, tablet, and desktop
 - 🔥 **Toasts & Alerts** – Smooth UX with hot toasts and sweet alerts
 - 📈 **Real-Time Updates** – Like counts are live without page refresh
 - 🔄 **Fallbacks** – Real-time UI fallback for loading and no data scenarios
