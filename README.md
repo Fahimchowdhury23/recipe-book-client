@@ -16,7 +16,6 @@ Recipe Book is built for food lovers to:
 - 🌍 Discover recipes shared by others
 - 💖 Like favorite recipes
 - 🌟 View top recipes based on likes
-- 📝 Save recipes to a wishlist for later
 
 ---
 
