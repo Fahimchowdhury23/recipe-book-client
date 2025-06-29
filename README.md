@@ -123,6 +123,28 @@ To set up the project locally, follow these steps:
    npm run dev
    ```
 
+6. Now Navigate to the server directory
+
+   ```bash
+   cd ../recipe-book-server
+   ```
+
+7. Install server dependencies:
+
+   ```bash
+   npm install
+   ```
+
+8. Run the development server (Choose one):
+
+   ```bash
+   node index.js
+   ```
+
+   ```bash
+   nodemon index.js
+   ```
+
 ---
 
 ## Usage
