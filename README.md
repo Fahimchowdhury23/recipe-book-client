@@ -135,7 +135,7 @@ To set up the project locally, follow these steps:
    npm install
    ```
 
-Run the development server (Choose one):
+Run the development server (Choose one) :
 
 8. Run normally :
 
