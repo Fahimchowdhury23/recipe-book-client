@@ -48,6 +48,8 @@ Recipe Book is built for food lovers to:
 | 🧸 Lottie                  | Engaging animations       |
 | ✍️ React Simple Typewriter | Typing effects            |
 | 🎨 React Icons             | UI Icons                  |
+| 🎬 Framer Motion           | Animations & transitions  |
+| 📊 Recharts                | Data visualization charts |
 
 ---
 
@@ -75,8 +77,72 @@ Our application includes dedicated routes to handle errors gracefully:
 | `sweetalert2`             | Modern alert popups for confirmations and messages                      |
 | `swiper`                  | Implements touch-enabled carousels for featured/top recipes             |
 | `tailwindcss`             | Utility-first CSS framework for responsive and clean design             |
+| `framer-motion`           | Adds smooth animations for features section and contact interactions    |
+| `recharts`                | Displays charts for visualizing recipe data                             |
+
+Refer to `package.json` for the entire list of dependencies.
 
 ---
+
+## Installation
+
+To set up the project locally, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/recipe-book-client.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd recipe-book-client
+   ```
+
+3. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+4. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## Usage
+
+Once the project is set up, you can:
+
+1. **Start the Development Server**:  
+   Run the following command and access the project at `http://localhost:5173/`
+
+   ```bash
+   npm run dev
+   ```
+
+2. **Build for Production**:  
+   Create a production-ready build using:
+
+   ```bash
+   npm run build
+   ```
+
+3. **Preview the Production Build**:  
+   After building, preview the app with:
+
+   ```bash
+   npm run preview
+   ```
+
+4. **Deploy**:  
+   Follow Firebase deployment commands to host your app:
+   ```bash
+   firebase deploy
+   ```
 
 ## 🧁 Contribute
 
