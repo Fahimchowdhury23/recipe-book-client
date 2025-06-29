@@ -93,7 +93,7 @@ Refer to `package.json` for the entire list of dependencies.
 
 To set up the project locally, follow these steps:
 
-1. Clone the client (frontend) repository:
+1. Clone the client (frontend) repositories:
 
    ```bash
    git clone https://github.com/fahimchowdhury/recipe-book-client.git
@@ -105,41 +105,23 @@ To set up the project locally, follow these steps:
    git clone https://github.com/fahimchowdhury/recipe-book-server.git
    ```
 
-3. Navigate into each directory:
+3. Navigate to the client directory:
 
    ```bash
    cd recipe-book-client
    ```
 
-```bash
-  cd ../recipe-book-server
-```
-
-4. Install dependencies:
+4. Install client dependencies:
 
    ```bash
    npm install
    ```
 
-5. Run the development servers:
+5. Run the development server:
 
-For Client:
-
-```bash
-npm run dev
-```
-
-For Server:
-
-```bash
-   node index.js
-```
-
-or if you have nodemon installed globally:
-
-```bash
-nodemon index.js
-```
+   ```bash
+   npm run dev
+   ```
 
 ---
 
