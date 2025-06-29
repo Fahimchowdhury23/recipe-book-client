@@ -93,59 +93,58 @@ Refer to `package.json` for the entire list of dependencies.
 
 To set up the project locally, follow these steps:
 
-1. Clone the client (frontend) repositories:
+1. **Clone the client (frontend) repositories :**
 
    ```bash
    git clone https://github.com/fahimchowdhury/recipe-book-client.git
    ```
 
-2. Clone the server (backend) repository:
+2. **Clone the server (backend) repository :**
 
    ```bash
    git clone https://github.com/fahimchowdhury/recipe-book-server.git
    ```
 
-3. Navigate to the client directory:
+3. **Navigate to the client directory :**
 
    ```bash
    cd recipe-book-client
    ```
 
-4. Install client dependencies:
+4. **Install client dependencies :**
 
    ```bash
    npm install
    ```
 
-5. Run the development server:
+5. **Run the development server :**
 
    ```bash
    npm run dev
    ```
 
-6. Now Navigate to the server directory
+6. **Now Navigate to the server directory**
 
    ```bash
    cd ../recipe-book-server
    ```
 
-7. Install server dependencies:
+7. **Install server dependencies :**
 
    ```bash
    npm install
    ```
 
-Run the development server (Choose one) :
-
-8. Run normally :
+8. **Run the development server (Choose one) :**
+   Run normally :
 
    ```bash
    node index.js
    ```
 
-Or,<br>
+   Or,
 
-9. If you have nodemon installed globally just run : (it will auto-restart on changes)
+   If you have nodemon installed globally just run : (it will auto-restart on changes)
 
    ```bash
    nodemon index.js
@@ -168,28 +167,28 @@ Or,<br>
 
 Once the project is set up, you can:
 
-1. **Start the Development Server**:  
+1. **Start the Development Server :**
    Run the following command and access the project at `http://localhost:5173/`
 
    ```bash
    npm run dev
    ```
 
-2. **Build for Production**:  
+2. **Build for Production :**
    Create a production-ready build using:
 
    ```bash
    npm run build
    ```
 
-3. **Preview the Production Build**:  
+3. **Preview the Production Build :**
    After building, preview the app with:
 
    ```bash
    npm run preview
    ```
 
-4. **Deploy**:  
+4. **Deploy :**
    Follow Firebase deployment commands to host your app:
    ```bash
    firebase deploy
