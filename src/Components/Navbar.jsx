@@ -1,4 +1,4 @@
-import React, { use, useEffect, useState } from "react";
+import React, { use, useEffect, useRef, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router";
 import AuthContext from "../Contexts/AuthContext";
 import toast from "react-hot-toast";
@@ -9,6 +9,7 @@ const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
   const navigate = useNavigate();
   const [theme, setTheme] = useState("light");
+  const menuRef = useRef(null);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -54,8 +55,11 @@ const Navbar = () => {
 
   return (
     <div className="navbar fixed top-0 z-50 bg-base-100 px-1 py-0 lg:p-3 flex justify-between md:justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
+      {/* For Mobile Devices */}
+
       <div className="dropdown dropdown-start md:hidden">
         <div
+          ref={menuRef}
           tabIndex={0}
           role="button"
           className="btn border-0 px-3 btn-primary"
@@ -68,25 +72,60 @@ const Navbar = () => {
           className="dropdown-content menu bg-base-100 rounded-box z-1 w-44 p-3 shadow-sm"
         >
           <div className="flex flex-col whitespace-nowrap font-medium text-[#4A3F3F] lg:gap-2">
-            <NavLink className="nav-link hover:bg-primary" to="/">
+            <NavLink
+              onClick={() => {
+                menuRef.current?.focus();
+                menuRef.current?.blur();
+              }}
+              className="nav-link hover:bg-primary"
+              to="/"
+            >
               Home
             </NavLink>
-            <NavLink className="nav-link hover:bg-primary" to="/allRecipes">
+            <NavLink
+              onClick={() => {
+                menuRef.current?.focus();
+                menuRef.current?.blur();
+              }}
+              className="nav-link hover:bg-primary"
+              to="/allRecipes"
+            >
               All Recipes
             </NavLink>
 
             {user && (
               <>
-                <NavLink className="nav-link hover:bg-primary" to="/dashboard">
+                <NavLink
+                  onClick={() => {
+                    menuRef.current?.focus();
+                    menuRef.current?.blur();
+                  }}
+                  className="nav-link hover:bg-primary"
+                  to="/dashboard"
+                >
                   Dashboard
                 </NavLink>
               </>
             )}
 
-            <NavLink className="nav-link hover:bg-primary" to="/features">
+            <NavLink
+              onClick={() => {
+                menuRef.current?.focus();
+                menuRef.current?.blur();
+              }}
+              className="nav-link hover:bg-primary"
+              to="/features"
+            >
               Features
             </NavLink>
-            <NavLink className="nav-link hover:bg-primary" to="/contact">
+            <NavLink
+              onClick={() => {
+                menuRef.current?.focus();
+                menuRef.current?.blur();
+              }}
+              className="nav-link hover:bg-primary"
+              to="/contact"
+            >
               Contact
             </NavLink>
           </div>
@@ -98,7 +137,7 @@ const Navbar = () => {
           <img
             className="w-7 h-7 md:w-10 md:h-10 lg:w-12 lg:h-12 cursor-pointer"
             src="https://i.ibb.co/sdgpf1pV/illustration-cooking-logo-solid-background-852896-5161-removebg-preview.png"
-            alt=""
+            alt="Recipe Book Logo"
           />
         </Link>
         <Link to="/">
@@ -108,7 +147,9 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="hidden md:flex items-center lg:text-xl whitespace-nowrap font-medium  text-[#4A3F3F] lg:gap-2">
+      {/* For Larger Devices */}
+
+      <div className="hidden md:flex items-center lg:text-xl whitespace-nowrap font-medium text-[#4A3F3F] lg:gap-2">
         <NavLink className="nav-link" to="/">
           Home
         </NavLink>
@@ -167,17 +208,18 @@ const Navbar = () => {
         </button>
 
         {user ? (
-          <div className="flex gap-4">
+          <div>
             {/* User Profile */}
 
             <div className="dropdown dropdown-end">
               <div className="p-1 md:p-1.25 hover:bg-primary/60 rounded-full">
                 <div
                   tabIndex={0}
+                  ref={menuRef}
                   role="button"
                   className="btn btn-ghost btn-circle avatar avatar-online"
                 >
-                  <div className="w-8 md:w-10 rounded-full">
+                  <div className="w-10 rounded-full">
                     <img alt={user?.displayName} src={user?.photoURL} />
                   </div>
                 </div>
@@ -188,17 +230,22 @@ const Navbar = () => {
               >
                 <li>
                   <a
-                    className="hover:bg-base-100"
-                    onClick={() =>
-                      navigate(`dashboard/myRecipes/${user?.email}`)
-                    }
+                    className="hover:bg-base-100 cursor-pointer active:!text-secondary focus:!outline-none active:!bg-base-100"
+                    onClick={() => {
+                      menuRef.current?.focus();
+                      menuRef.current?.blur();
+                      navigate(`dashboard/myRecipes/${user?.email}`);
+                    }}
                   >
                     {user?.displayName}
                   </a>
                 </li>
 
                 <li>
-                  <a className="hover:bg-base-100" onClick={handleSignOut}>
+                  <a
+                    className="hover:bg-base-100 cursor-pointer active:!text-secondary focus:!outline-none active:!bg-base-100"
+                    onClick={handleSignOut}
+                  >
                     Logout
                   </a>
                 </li>

@@ -32,7 +32,7 @@ const AllRecipes = () => {
   });
 
   return (
-    <section>
+    <section className="min-h-screen">
       <title>All Recipes | Recipe Book</title>
       <h2 className="text-center pt-2 md:pt-4 text-xl md:text-2xl lg:text-3xl font-bold text-secondary drop-shadow md:mb-1">
         All Recipes
@@ -44,7 +44,7 @@ const AllRecipes = () => {
       <div className="flex justify-center items-center gap-2 md:gap-4">
         <div className="flex justify-center items-center gap-1 lg:gap-2">
           <div>
-            <p className="md:text-lg lg:text-xl whitespace-nowrap font-semibold text-accent">
+            <p className="md:text-lg whitespace-nowrap font-semibold text-accent">
               Cuisine Type :
             </p>
           </div>
@@ -54,7 +54,7 @@ const AllRecipes = () => {
               name="cuisineType"
               value={selectedCuisine}
               onChange={(e) => setSelectedCuisine(e.target.value)}
-              className="p-1 md:p-2 cursor-pointer rounded-lg bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+              className="p-1 cursor-pointer rounded-lg bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
             >
               {cuisines.map((type) => (
                 <option
@@ -73,7 +73,7 @@ const AllRecipes = () => {
 
         <div className="flex justify-center items-center gap-1 lg:gap-2">
           <div>
-            <p className="md:text-lg lg:text-xl whitespace-nowrap font-semibold text-accent">
+            <p className="md:text-lg whitespace-nowrap font-semibold text-accent">
               Sort By Title :
             </p>
           </div>
@@ -83,7 +83,7 @@ const AllRecipes = () => {
               name="sorting"
               value={sortOrder}
               onChange={(e) => setSortOrder(e.target.value)}
-              className="p-1 md:p-2 cursor-pointer rounded-lg bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
+              className="p-1 cursor-pointer rounded-lg bg-white text-secondary focus:outline-none focus:ring-1 focus:ring-secondary"
             >
               <option className="bg-primary text-lg font-medium" value="none">
                 Default

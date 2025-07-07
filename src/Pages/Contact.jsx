@@ -37,7 +37,7 @@ const Contact = () => {
 
   return (
     <motion.div
-      className="max-w-7xl mx-auto px-5 py-3 lg:py-8"
+      className="max-w-7xl min-h-screen mx-auto px-5 py-3 lg:py-8"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}

@@ -60,7 +60,7 @@ const router = createBrowserRouter([
   // Dashboard Route Started
 
   {
-    path: "/dashboard",
+    path: "dashboard",
     element: (
       <PrivateRoute>
         <DashboardLayout></DashboardLayout>

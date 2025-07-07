@@ -72,7 +72,7 @@ const Features = () => {
 
   return (
     <motion.div
-      className="max-w-4xl lg:max-w-7xl mx-auto p-4 lg:p-6"
+      className="max-w-4xl min-h-screen lg:max-w-7xl mx-auto p-4 lg:p-6"
       initial="hidden"
       animate="show"
       variants={container}

@@ -8,10 +8,10 @@ const DashboardLayout = () => {
   const { state } = useNavigation();
 
   return (
-    <section className="bg-gradient-to-b min-h-screen from-bg-base-100 to-primary">
+    <section className="bg-gradient-to-b from-bg-base-100 to-primary min-h-screen">
       <Sidebar></Sidebar>
 
-      <main className="">
+      <main>
         <ScrollToTop></ScrollToTop>
         {state === "loading" ? <Loader></Loader> : <Outlet></Outlet>}
       </main>

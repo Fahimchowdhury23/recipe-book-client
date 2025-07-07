@@ -1,5 +1,5 @@
 import React from "react";
-import { FaDiscord, FaFacebook, FaGithub, FaYoutube } from "react-icons/fa";
+import { FaDiscord, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link, NavLink } from "react-router";
 
 const Footer = () => {
@@ -47,26 +47,21 @@ const Footer = () => {
           >
             <FaGithub className="cursor-pointer text-2xl md:text-3xl" />
           </a>
+
+          <a
+            href="https://www.linkedin.com/in/md-fahim-chowdhoury"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaLinkedin className="cursor-pointer text-2xl md:text-3xl" />
+          </a>
+
           <a
             href="https://discord.com/users/879041544181649500"
             target="_blank"
             rel="noopener noreferrer"
           >
             <FaDiscord className="cursor-pointer text-2xl md:text-3xl" />
-          </a>
-          <a
-            href="https://www.facebook.com/fahimchowdhury23/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook className="cursor-pointer text-2xl md:text-3xl" />
-          </a>
-          <a
-            href="https://www.youtube.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaYoutube className="cursor-pointer text-2xl md:text-3xl" />
           </a>
         </div>
       </nav>

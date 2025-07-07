@@ -26,7 +26,7 @@ const RecipeCard = ({ recipe }) => {
             className="w-10 h-10 rounded-full"
           />
           <span className="font-medium text-black opacity-70">
-            By {recipe.displayName}
+            {recipe.displayName}
           </span>
         </div>
       </div>

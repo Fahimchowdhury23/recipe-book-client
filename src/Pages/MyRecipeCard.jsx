@@ -25,7 +25,7 @@ const MyRecipeCard = ({ recipe, handleDelete, setSelectedRecipe }) => {
             className="w-12 h-12 rounded-full"
           />
           <span className="text-lg font-medium text-secondary">
-            By {recipe.displayName}
+            {recipe.displayName}
           </span>
         </div>
       )}

@@ -34,11 +34,11 @@
 text-secondary transition-transform ease-out duration-150;
 }
 .nav-link.active {
-  @apply font-bold scale-105;
+  @apply font-bold scale-100 md:scale-105 bg-primary md:bg-transparent;
 }
 
 .swiper-button-next::after,
 .swiper-button-prev::after {
   color: #7b3f00;
-  font: bolder;
+  font-weight: bolder;
 }

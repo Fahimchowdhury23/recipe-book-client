@@ -38,7 +38,7 @@ const Slider = () => {
         pagination={{ clickable: true }}
         navigation={true}
         autoplay={{ delay: 3000, disableOnInteraction: false }}
-        className="mySwiper"
+        className="mySwiper rounded-lg"
       >
         {images.map((src, index) => (
           <SwiperSlide className="flex justify-center items-center" key={index}>

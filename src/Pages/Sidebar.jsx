@@ -1,14 +1,24 @@
-import React, { use } from "react";
+import React, { use, useEffect } from "react";
 import AuthContext from "../Contexts/AuthContext";
-import { Link, useNavigate } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
 import Swal from "sweetalert2";
 import toast from "react-hot-toast";
 import { BiLogOut } from "react-icons/bi";
 import { TbLayoutSidebarLeftExpand } from "react-icons/tb";
+import { IoArrowBackCircleOutline } from "react-icons/io5";
 
 const Sidebar = () => {
   const { user, signOutUser } = use(AuthContext);
   const navigate = useNavigate();
+
+  // only for tablet and desktop view
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 768px)");
+    if (mediaQuery.matches) {
+      document.getElementById("my-drawer").checked = true;
+    }
+  }, []);
 
   const handleSignOut = () => {
     Swal.fire({
@@ -45,7 +55,7 @@ const Sidebar = () => {
       <div className="drawer-content pl-4 pt-4">
         <label
           htmlFor="my-drawer"
-          className="btn btn-info border-0 p-3 drawer-button"
+          className="btn bg-green-500 border-0 p-3 drawer-button"
         >
           <TbLayoutSidebarLeftExpand size={24} />
         </label>
@@ -63,42 +73,50 @@ const Sidebar = () => {
           <p className="border-b-3 w-full lg:w-9/12 border-accent/70 mb-2 md:mb-4"></p>
 
           <div className="flex-1 flex flex-col justify-between">
-            <div>
+            <div className="space-y-1.5">
               <li>
-                <Link to="/">Back to Home</Link>
+                <NavLink
+                  to="/"
+                  className="hover:bg-secondary active:!bg-secondary hover:text-white active:!text-white focus:!outline-none"
+                >
+                  <IoArrowBackCircleOutline size={28} /> Back to Home
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink
                   onClick={() =>
                     (document.getElementById("my-drawer").checked = false)
                   }
                   to="/dashboard"
+                  className="hover:bg-secondary active:!bg-secondary hover:text-white active:!text-white focus:!outline-none"
                 >
                   Overview
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink
                   onClick={() =>
                     (document.getElementById("my-drawer").checked = false)
                   }
                   to="/dashboard/addRecipe"
+                  className="hover:bg-secondary active:!bg-secondary hover:text-white active:!text-white focus:!outline-none"
                 >
                   Add Recipe
-                </Link>
+                </NavLink>
               </li>
 
               <li>
-                <Link
+                <NavLink
                   onClick={() =>
                     (document.getElementById("my-drawer").checked = false)
                   }
                   to={`/dashboard/myRecipes/${user?.email}`}
+                  className="hover:bg-secondary active:!bg-secondary hover:text-white active:!text-white focus:!outline-none"
                 >
                   My Recipes
-                </Link>
+                </NavLink>
               </li>
             </div>
 
@@ -117,10 +135,12 @@ const Sidebar = () => {
                 <div>
                   <li>
                     <a
-                      className="px-0"
-                      onClick={() =>
-                        navigate(`/dashboard/myRecipes/${user?.email}`)
-                      }
+                      onClick={() => {
+                        navigate(`/dashboard/myRecipes/${user?.email}`)(
+                          (document.getElementById("my-drawer").checked = false)
+                        );
+                      }}
+                      className="px-0 hover:bg-transparent active:!text-white hover:text-white focus:!outline-none active:!bg-transparent"
                     >
                       {user?.displayName}
                     </a>

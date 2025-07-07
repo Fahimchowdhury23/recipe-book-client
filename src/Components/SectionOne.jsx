@@ -3,6 +3,21 @@ import Lottie from "lottie-react";
 import cookingAnimation from "../animations/Animation - 1748173156747.json";
 
 const SectionOne = () => {
+  const contents = [
+    {
+      title: "👩‍🍳 Step-by-Step Instructions",
+      para: "Clear directions and images for every recipe, so you never feel lost in the kitchen.",
+    },
+    {
+      title: "💬 Community Driven",
+      para: "Explore cuisines from all over the world—from Desi bhuna to Italian pasta.",
+    },
+    {
+      title: "👩‍🍳 Step-by-Step Instructions",
+      para: "Add your own recipes, get feedback, and connect with food lovers just like you.",
+    },
+  ];
+
   return (
     <div className="grid grid-cols-1 xl:grid-cols-2 gap-6 pb-10 w-11/12 lg:w-10/12 mx-auto">
       <section className="py-3 md:py-5 lg:py-8">
@@ -17,31 +32,14 @@ const SectionOne = () => {
           </p>
 
           <div className="flex flex-col mx-auto gap-5 mt-3 md:mt-4 lg:mt-6">
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-semibold text-lg">
-                👩‍🍳 Step-by-Step Instructions
-              </h3>
-              <p className="text-gray-600">
-                Clear directions and images for every recipe, so you never feel
-                lost in the kitchen.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-semibold text-lg">🌍 Global Flavors</h3>
-              <p className="text-gray-600">
-                Explore cuisines from all over the world—from Desi bhuna to
-                Italian pasta.
-              </p>
-            </div>
-
-            <div className="bg-white p-6 rounded-xl shadow">
-              <h3 className="font-semibold text-lg">💬 Community Driven</h3>
-              <p className="text-gray-600">
-                Add your own recipes, get feedback, and connect with food lovers
-                just like you.
-              </p>
-            </div>
+            {contents.map((content, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow">
+                <h3 className="font-semibold text-black opacity-80 text-lg">
+                  {content.title}
+                </h3>
+                <p className="text-gray-600">{content.para}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
