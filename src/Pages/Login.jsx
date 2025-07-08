@@ -63,7 +63,7 @@ const Login = () => {
       .then((result) => {
         toast.dismiss();
         toast.success(`Welcome back, ${result?.user?.displayName}!`, {
-          duration: 3000,
+          duration: 1000,
           className: "text-center",
         });
         setLoading(false);
@@ -103,10 +103,10 @@ const Login = () => {
   };
 
   return (
-    <section className="py-2 md:py-5 lg:py-16">
-      <title>Login Page | Recipe Book</title>
-      <div className="grid grid-cols-1 max-w-2xl lg:max-w-full mx-auto lg:mx-0 gap-4 lg:gap-0 lg:grid-cols-2">
-        <div className="flex flex-col w-full rounded-xl lg:rounded-r-none items-center justify-center bg-[#EDC9AF]">
+    <section className="pb-4 md:py-6 lg:py-16">
+      <title>Login | Recipe Book</title>
+      <div className="grid grid-cols-1 max-w-2xl lg:max-w-full mx-auto lg:mx-0 gap-2 md:gap-4 lg:gap-0 lg:grid-cols-2">
+        <div className="flex flex-col w-full rounded-xl lg:rounded-r-none items-center justify-center bg-[#EDC9AF] shadow-xl">
           <h2 className="text-center pt-6 lg:pt-0 text-3xl md:text-4xl font-bold text-accent drop-shadow md:mb-4 lg:mb-8">
             {state ? "You have to Login first!" : "Welcome Back!"}
           </h2>
@@ -116,13 +116,13 @@ const Login = () => {
           />
         </div>
 
-        <div className="w-full py-3 md:py-6 xl:p-8 lg:border-l-0 rounded-xl lg:rounded-3xl lg:rounded-l-none lg:rounded-r-3xl border border-primary shadow-xl">
+        <div className="w-full py-3 md:py-6 xl:py-8 rounded-xl lg:border-l-0 lg:rounded-3xl lg:rounded-l-none lg:rounded-r-xl border border-primary shadow-xl">
           <div className="w-11/12 mx-auto">
             {/* Google Sign In */}
 
             <button
               onClick={handleGoogleSignIn}
-              className="btn rounded-2xl w-full font-semibold bg-primary/80 hover:bg-primary text-secondary border-none transition backdrop-blur-xl"
+              className="btn rounded-xl w-full font-semibold bg-primary/80 hover:bg-primary text-secondary border-none transition-all backdrop-blur-xl"
             >
               {googleLoading ? (
                 <span className="loading loading-spinner text-secondary"></span>
@@ -142,7 +142,7 @@ const Login = () => {
             >
               <div className="flex items-center pt-3 pb-1">
                 <p className="border-b-2 w-[15%] md:w-[20%] lg:w-[15%] xl:w-[20%] border-accent/70"></p>
-                <p className="text-center text-sm whitespace-nowrap md:text-base w-[70%] md:w-[60%] lg:w-[70%] xl:w-[60%] text-accent/70">
+                <p className="text-center text-xs whitespace-nowrap md:text-base w-[70%] md:w-[60%] lg:w-[70%] xl:w-[60%] text-accent/70">
                   Or Continue with Email / Password
                 </p>
                 <p className="border-b-2 w-[15%] md:w-[20%] lg:w-[15%] xl:w-[20%] border-accent/70"></p>
@@ -183,7 +183,7 @@ const Login = () => {
                     e.preventDefault();
                     setShowPass(!showPass);
                   }}
-                  className="absolute top-3 right-5 cursor-pointer text-secondary  text-2xl"
+                  className="absolute top-3 right-5 cursor-pointer text-secondary text-2xl"
                 >
                   {showPass ? <LuEye></LuEye> : <LuEyeClosed></LuEyeClosed>}
                 </button>
@@ -195,7 +195,7 @@ const Login = () => {
 
               <button
                 type="submit"
-                className="w-full btn py-2 rounded-2xl border-none text-lg bg-primary/80 hover:bg-primary text-secondary font-medium transition backdrop-blur-xl"
+                className="w-full btn py-2 rounded-xl border-0 text-lg bg-primary/80 hover:bg-primary text-secondary font-medium transition-all backdrop-blur-xl"
               >
                 {loading ? (
                   <span className="loading loading-spinner text-secondary"></span>
@@ -205,7 +205,7 @@ const Login = () => {
               </button>
             </form>
 
-            <p className="mt-3 justify-center flex gap-1 text-accent/80">
+            <p className="mt-2 md:mt-3 justify-center flex gap-1 text-accent/80">
               New to Recipe Book?
               <Link
                 to="/auth/register"

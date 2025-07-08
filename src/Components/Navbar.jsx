@@ -4,12 +4,15 @@ import AuthContext from "../Contexts/AuthContext";
 import toast from "react-hot-toast";
 import Swal from "sweetalert2";
 import { HiMenuAlt1 } from "react-icons/hi";
+import { RxCross1 } from "react-icons/rx";
 
 const Navbar = () => {
   const { user, signOutUser } = use(AuthContext);
   const navigate = useNavigate();
   const [theme, setTheme] = useState("light");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const profileRef = useRef(null);
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);
@@ -54,24 +57,30 @@ const Navbar = () => {
   };
 
   return (
-    <div className="navbar fixed top-0 z-50 bg-base-100 px-1 py-0 lg:p-3 flex justify-between md:justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
+    <div className="navbar fixed top-0 z-50 bg-base-100 px-1 py-0 lg:p-3 flex justify-between lg:justify-around border-1 whitespace-nowrap border-[#d8afa9] shadow-sm">
       {/* For Mobile Devices */}
 
-      <div className="dropdown dropdown-start md:hidden">
+      <div
+        onClick={(e) => {
+          e.preventDefault();
+          setIsMenuOpen(!isMenuOpen);
+        }}
+        className="dropdown dropdown-start lg:hidden"
+      >
         <div
           ref={menuRef}
           tabIndex={0}
           role="button"
-          className="btn border-0 px-3 btn-primary"
+          className="btn border-0 btn-primary"
         >
-          <HiMenuAlt1 size={20} />
+          {isMenuOpen ? <RxCross1 size={22} /> : <HiMenuAlt1 size={22} />}
         </div>
 
         <ul
           tabIndex={0}
-          className="dropdown-content menu bg-base-100 rounded-box z-1 w-44 p-3 shadow-sm"
+          className="dropdown-content menu bg-gradient-to-b from-primary to-base-100 rounded-box z-1 w-50 md:w-60 text-lg md:text-xl p-2 md:p-4 shadow-sm"
         >
-          <div className="flex flex-col whitespace-nowrap font-medium text-[#4A3F3F] lg:gap-2">
+          <div className="flex flex-col whitespace-nowrap font-medium text-[#4A3F3F] md:gap-1">
             <NavLink
               onClick={() => {
                 menuRef.current?.focus();
@@ -128,6 +137,16 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
+            <NavLink
+              onClick={() => {
+                menuRef.current?.focus();
+                menuRef.current?.blur();
+              }}
+              className="nav-link hover:bg-primary"
+              to="/auth/login"
+            >
+              <button>Login</button>
+            </NavLink>
           </div>
         </ul>
       </div>
@@ -141,7 +160,7 @@ const Navbar = () => {
           />
         </Link>
         <Link to="/">
-          <h1 className="text-lg md:text-2xl lg:text-3xl font-bold cursor-pointer text-accent">
+          <h1 className="text-xl md:text-3xl font-bold cursor-pointer text-accent">
             Recipe Book
           </h1>
         </Link>
@@ -149,7 +168,7 @@ const Navbar = () => {
 
       {/* For Larger Devices */}
 
-      <div className="hidden md:flex items-center lg:text-xl whitespace-nowrap font-medium text-[#4A3F3F] lg:gap-2">
+      <div className="hidden lg:flex items-center lg:text-xl whitespace-nowrap font-medium text-[#4A3F3F] lg:gap-2">
         <NavLink className="nav-link" to="/">
           Home
         </NavLink>
@@ -215,7 +234,7 @@ const Navbar = () => {
               <div className="p-1 md:p-1.25 hover:bg-primary/60 rounded-full">
                 <div
                   tabIndex={0}
-                  ref={menuRef}
+                  ref={profileRef}
                   role="button"
                   className="btn btn-ghost btn-circle avatar avatar-online"
                 >
@@ -232,8 +251,8 @@ const Navbar = () => {
                   <a
                     className="hover:bg-base-100 cursor-pointer active:!text-secondary focus:!outline-none active:!bg-base-100"
                     onClick={() => {
-                      menuRef.current?.focus();
-                      menuRef.current?.blur();
+                      profileRef.current?.focus();
+                      profileRef.current?.blur();
                       navigate(`dashboard/myRecipes/${user?.email}`);
                     }}
                   >
@@ -255,12 +274,12 @@ const Navbar = () => {
         ) : (
           <div className="flex items-center gap-2">
             <Link to="/auth/login">
-              <button className="text-accent lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
+              <button className="hidden md:flex text-accent lg:text-lg btn bg-primary rounded-lg p-3 md:p-4 lg:p-5 border-none font-bold">
                 Login
               </button>
             </Link>
             <Link to="/auth/register">
-              <button className="text-accent hidden md:flex lg:text-lg btn bg-primary rounded-full p-3 lg:p-5 border-none font-bold">
+              <button className="hidden md:flex text-accent lg:text-lg btn bg-primary rounded-lg p-3 md:p-4 lg:p-5 border-none font-bold">
                 Register
               </button>
             </Link>

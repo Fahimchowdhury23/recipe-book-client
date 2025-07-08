@@ -62,7 +62,7 @@ const Register = () => {
             toast.success(
               `Woohoo! ${result?.user?.displayName}, you're officially in. Let's have some fun!.`,
               {
-                duration: 3000,
+                duration: 1000,
                 className: "text-center",
               }
             );
@@ -96,7 +96,7 @@ const Register = () => {
         toast.success(
           `Hey there, ${result?.user?.displayName} You just made a great choice joining us! Let's rock!.`,
           {
-            duration: 3000,
+            duration: 1000,
             className: "text-center",
           }
         );
@@ -113,7 +113,7 @@ const Register = () => {
 
   return (
     <section className="md:py-4 lg:py-7">
-      <title>Register Page | Recipe Book</title>
+      <title>Register | Recipe Book</title>
       <h2 className="text-center text-2xl lg:text-3xl font-bold text-secondary drop-shadow mb-2 lg:mb-4">
         Let's Get started!
       </h2>
