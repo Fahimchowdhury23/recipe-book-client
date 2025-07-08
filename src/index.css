@@ -34,7 +34,7 @@
 text-secondary transition-transform ease-out duration-150;
 }
 .nav-link.active {
-  @apply font-bold scale-100 md:scale-105 bg-primary md:bg-transparent;
+  @apply font-bold scale-100 md:scale-105;
 }
 
 .swiper-button-next::after,
