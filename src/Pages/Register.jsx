@@ -112,7 +112,7 @@ const Register = () => {
   };
 
   return (
-    <section className="py-4 lg:py-7">
+    <section className="md:py-4 lg:py-7">
       <title>Register Page | Recipe Book</title>
       <h2 className="text-center text-2xl lg:text-3xl font-bold text-secondary drop-shadow mb-2 lg:mb-4">
         Let's Get started!

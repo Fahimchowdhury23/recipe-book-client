@@ -103,7 +103,7 @@ const Login = () => {
   };
 
   return (
-    <section className="py-6 lg:py-16">
+    <section className="py-2 md:py-5 lg:py-16">
       <title>Login Page | Recipe Book</title>
       <div className="grid grid-cols-1 max-w-2xl lg:max-w-full mx-auto lg:mx-0 gap-4 lg:gap-0 lg:grid-cols-2">
         <div className="flex flex-col w-full rounded-xl lg:rounded-r-none items-center justify-center bg-[#EDC9AF]">
