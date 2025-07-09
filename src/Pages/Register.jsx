@@ -112,18 +112,18 @@ const Register = () => {
   };
 
   return (
-    <section className="md:py-4 lg:py-7">
+    <section className="md:py-4 lg:py-7 min-h-screen">
       <title>Register | Recipe Book</title>
-      <h2 className="text-center text-2xl lg:text-3xl font-bold text-secondary drop-shadow mb-2 lg:mb-4">
+      <h2 className="text-center text-2xl md:text-3xl font-bold text-secondary drop-shadow mb-2 lg:mb-4">
         Let's Get started!
       </h2>
 
-      <div className="w-full max-w-xl lg:max-w-2xl p-5 pb-3 md:px-8 mx-auto rounded-xl lg:rounded-2xl bg-white/20 backdrop-blur-xl shadow-xl">
+      <div className="w-full max-w-xl lg:max-w-2xl p-4 pb-3 md:px-8 mx-auto rounded-xl lg:rounded-xl bg-white/20 backdrop-blur-xl shadow-xl">
         {/* Google Sign In */}
 
         <button
           onClick={handleGoogleSignIn}
-          className="btn rounded-2xl w-full font-semibold bg-primary text-secondary border-none transition backdrop-blur-xl"
+          className="btn rounded-xl w-full font-semibold bg-primary text-secondary border-0 transition backdrop-blur-xl"
         >
           {googleLoading ? (
             <span className="loading loading-spinner text-secondary"></span>
@@ -211,7 +211,7 @@ const Register = () => {
                 e.preventDefault();
                 setShowPass(!showPass);
               }}
-              className="absolute top-3 right-5 cursor-pointer text-secondary  text-2xl"
+              className="absolute top-3 right-5 cursor-pointer text-secondary text-2xl"
             >
               {showPass ? <LuEye></LuEye> : <LuEyeClosed></LuEyeClosed>}
             </button>
@@ -219,7 +219,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="w-full btn py-2 rounded-2xl border-none text-lg bg-primary text-secondary font-medium transition backdrop-blur-xl"
+            className="w-full btn py-2 rounded-xl border-none text-lg bg-primary text-secondary font-medium transition backdrop-blur-xl"
           >
             {loading ? (
               <span className="loading loading-spinner text-secondary"></span>
