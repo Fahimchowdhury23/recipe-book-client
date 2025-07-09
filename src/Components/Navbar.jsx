@@ -91,6 +91,7 @@ const Navbar = () => {
             >
               Home
             </NavLink>
+
             <NavLink
               onClick={() => {
                 menuRef.current?.focus();
@@ -127,6 +128,7 @@ const Navbar = () => {
             >
               Features
             </NavLink>
+
             <NavLink
               onClick={() => {
                 menuRef.current?.focus();
@@ -137,16 +139,19 @@ const Navbar = () => {
             >
               Contact
             </NavLink>
-            <NavLink
-              onClick={() => {
-                menuRef.current?.focus();
-                menuRef.current?.blur();
-              }}
-              className="nav-link hover:bg-primary"
-              to="/auth/login"
-            >
-              <button>Login</button>
-            </NavLink>
+
+            {!user && (
+              <NavLink
+                onClick={() => {
+                  menuRef.current?.focus();
+                  menuRef.current?.blur();
+                }}
+                className="nav-link hover:bg-primary"
+                to="/auth/login"
+              >
+                <button>Login</button>
+              </NavLink>
+            )}
           </div>
         </ul>
       </div>
